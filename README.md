@@ -49,7 +49,7 @@ Code implementation:
         constraints.add(csp.Constraint((name_to_variable_map[i] for i in range(column, order + 1, n)),  
                                        exact_length_magic_sum))  
     
-    # diagonals constraints
+    # diagonal constraints
     constraints.add(csp.Constraint((name_to_variable_map[diag] for diag in range(1, order + 1, n + 1)), 
                                    exact_length_magic_sum))  
     constraints.add(csp.Constraint((name_to_variable_map[diag] for diag in range(n, order, n - 1)), 
