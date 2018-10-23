@@ -70,7 +70,7 @@ Code implementation:
     >>> 8 : 9  
     >>> 9 : 2  
 
-Alternatively, one could use any of the other algorithms implemented in the package (min-conflicts, simulated annealing,  
+Alternatively, one could use any other algorithm implemented in the package (min-conflicts, simulated annealing,  
  naive cycle cutset etc. see full list below).
 
 Other examples which can be found under 'examples' directory:
