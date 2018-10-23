@@ -108,4 +108,4 @@ Maintaining Arc Consistency (MAC).
 <br>
 
 ## Basic API (unsound and incomplete, made for explanatory purposes ONLY)
-![](https://i.imgur.com/GjwBr45.png)
+![](https://i.imgur.com/QxmNWv5.png)
