@@ -1,4 +1,4 @@
-from itertools import chain, filterfalse
+from itertools import filterfalse
 from typing import DefaultDict, Set, FrozenSet, Dict, Any, Iterable, Optional, Deque, Tuple
 from collections import defaultdict
 from operator import methodcaller
@@ -13,7 +13,8 @@ class ConstraintProblem:
 
     def __init__(self, constraints: Iterable[Constraint], name_to_variable_map: Optional[Dict[Any, Variable]] = None) \
             -> None:
-        self.__variables_to_constraints_map = _build_variables_to_constraints_mapping(constraints)
+        self.__constraints = frozenset(constraints)
+        self.__variables_to_constraints_map = _build_variables_to_constraints_mapping(self.__constraints)
         self.__constraint_graph = _build_constraint_graph_as_adjacency_list(self.__variables_to_constraints_map)
         self.__name_to_variable_map = name_to_variable_map
         if name_to_variable_map is not None:
@@ -30,13 +31,11 @@ class ConstraintProblem:
         return all(self.__variables_to_constraints_map.keys())
 
     def is_consistently_assigned(self) -> bool:
-        constraints = tuple(chain.from_iterable(self.__variables_to_constraints_map.values()))
-        is_consistent_results = map(ConstraintProblem.__is_consistent_method_caller, constraints)
+        is_consistent_results = map(ConstraintProblem.__is_consistent_method_caller, self.__constraints)
         return all(is_consistent_results)
 
     def is_completely_consistently_assigned(self) -> bool:
-        constraints = frozenset(chain.from_iterable(self.__variables_to_constraints_map.values()))
-        return all(constraints)
+        return all(self.__constraints)
 
     def get_variables(self) -> FrozenSet[Variable]:
         return frozenset(self.__variables_to_constraints_map.keys())
@@ -61,26 +60,22 @@ class ConstraintProblem:
         return frozenset(unassigned_neighbors)
 
     def get_constraints(self) -> FrozenSet[Constraint]:
-        return frozenset(chain.from_iterable(self.__variables_to_constraints_map.values()))
+        return self.__constraints
 
     def get_consistent_constraints(self) -> FrozenSet[Constraint]:
-        constraints = frozenset(chain.from_iterable(self.__variables_to_constraints_map.values()))
-        consistent_constraints = filter(ConstraintProblem.__is_consistent_method_caller, constraints)
+        consistent_constraints = filter(ConstraintProblem.__is_consistent_method_caller, self.__constraints)
         return frozenset(consistent_constraints)
 
     def get_inconsistent_constraints(self) -> FrozenSet[Constraint]:
-        constraints = frozenset(chain.from_iterable(self.__variables_to_constraints_map.values()))
-        inconsistent_constraints = filterfalse(ConstraintProblem.__is_consistent_method_caller, constraints)
+        inconsistent_constraints = filterfalse(ConstraintProblem.__is_consistent_method_caller, self.__constraints)
         return frozenset(inconsistent_constraints)
 
     def get_satisfied_constraints(self) -> FrozenSet[Constraint]:
-        constraints = frozenset(chain.from_iterable(self.__variables_to_constraints_map.values()))
-        satisfied_constraints = filter(None, constraints)
+        satisfied_constraints = filter(None, self.__constraints)
         return frozenset(satisfied_constraints)
 
     def get_unsatisfied_constraints(self) -> FrozenSet[Constraint]:
-        constraints = frozenset(chain.from_iterable(self.__variables_to_constraints_map.values()))
-        unsatisfied_constraints = filterfalse(None, constraints)
+        unsatisfied_constraints = filterfalse(None, self.__constraints)
         return frozenset(unsatisfied_constraints)
 
     def get_constraints_containing_variable(self, variable: Variable) -> FrozenSet[Constraint]:
@@ -125,16 +120,15 @@ class ConstraintProblem:
         return self.__constraint_graph
 
     def add_constraint(self, constraint: Constraint) -> None:
-        new_constraints = set(chain.from_iterable(self.__variables_to_constraints_map.values())) | {constraint}
+        new_constraints = self.__constraints | {constraint}
         self.__variables_to_constraints_map = _build_variables_to_constraints_mapping(new_constraints)
         self.__constraint_graph = _build_constraint_graph_as_adjacency_list(self.__variables_to_constraints_map)
 
     def __str__(self):
-        constraints = frozenset(chain.from_iterable(self.__variables_to_constraints_map.values()))
         state = "\n  constraint_problem is completely assigned: " + str(all(self.__variables_to_constraints_map)) + \
                 ". constraint_problem is consistent: " + str(self.is_consistently_assigned()) + \
-                ". constraint_problem is satisfied: " + str(all(constraints)) + ". }\n"
-        return "{ " + "\n  ".join(map(lambda constraint: str(constraint), constraints)) + state
+                ". constraint_problem is satisfied: " + str(all(self.__constraints)) + ". }\n"
+        return "{ " + "\n  ".join(map(lambda constraint: str(constraint), self.__constraints)) + state
 
 
 def _build_variables_to_constraints_mapping(constraints: Iterable[Constraint]) \

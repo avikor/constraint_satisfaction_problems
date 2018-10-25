@@ -10,6 +10,16 @@ class Constraint:
 
     def __init__(self, variables: Iterable[Variable], evaluate_constraint: ConstraintEvaluator) -> None:
         self.__variables = tuple(variables)
+
+        if len(self.__variables) != len(frozenset(self.__variables)):
+            self.__variables = list()
+            seen_variables = set()
+            for var in variables:
+                if var not in seen_variables:
+                    self.__variables.append(var)
+                    seen_variables.add(var)
+            self.__variables = tuple(self.__variables)
+
         self.__evaluate_constraint = evaluate_constraint
         self.__i_consistent_assignments = set()
         if len(self.__variables) == 1:
@@ -18,6 +28,11 @@ class Constraint:
     def __enforce_unary_constraint(self) -> None:
         variable, *_ = self.__variables
         variable.domain = list(self.get_consistent_domain_values(variable))
+
+    def __get_variables(self) -> Tuple[Variable, ...]:
+        return self.__variables
+
+    variables = property(__get_variables)
 
     @classmethod
     def from_domains(cls, evaluate_constraint: ConstraintEvaluator, *domains) -> Any:
@@ -39,10 +54,6 @@ class Constraint:
             return all(self.__variables) and self.is_consistent() and self.__is_i_consistent_assignment()
         return all(self.__variables) and self.is_consistent()
 
-    def __get_variables(self) -> Tuple[Variable, ...]:
-        return self.__variables
-
-    variables = property(__get_variables)
     __value_getter = attrgetter("value")
 
     def is_consistent(self) -> bool:

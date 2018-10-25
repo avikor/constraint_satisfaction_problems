@@ -7,9 +7,9 @@ class Variable:
 
     def __init__(self, domain: Iterable, value=None) -> None:
         if type(domain) is not str:
-            my_domain = set(domain)
+            my_domain = frozenset(domain)
         else:
-            my_domain = set(str(domain).split()[0])
+            my_domain = frozenset(str(domain).split()[0])
         self.__domain = deepcopy(list(my_domain))
         self.__value = None
         if value is not None:
