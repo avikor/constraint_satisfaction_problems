@@ -29,7 +29,8 @@ Constraints:
 
 Code implementation:
 
-    import csp  
+    import csp
+      
     n = 3  
     order = n**2  
     magic_sum = n * int((order + 1) / 2)  
@@ -80,7 +81,7 @@ Code implementation:
 Can we place n queens on an n x n chessboard so that no two queens threaten each other?
 
 Variables: columns of the board.  
-Domain: the row each queen could be placed inside a column, i.e. (1, ..., n).  
+Domain: the row each queen could be placed inside a column, i.e. each variable's domain is (1, ..., n).  
 Constraints:  
 1. No single row hold two queens: all variables are (pair-wise) all-different.
 2. The queens don't attack each other horizontally.
@@ -88,8 +89,9 @@ Constraints:
 
 Code implementation:
    
-    n = 8
+    import csp
     
+    n = 8
     name_to_variable_map = {col: csp.Variable(range(n)) for col in range(n)}
     
     
