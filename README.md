@@ -12,7 +12,7 @@ and the edges correspond to constraints, i.e. V = X and E = C.
 <br>
 <br>
 
-## Toy Example: Magic Square
+## Example: Magic Square
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e4/Magicsquareexample.svg)  
 <br>
 Variables: squares on the board.  
