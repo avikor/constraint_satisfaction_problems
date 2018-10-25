@@ -12,9 +12,12 @@ and the edges correspond to constraints, i.e. V = X and E = C.
 <br>
 <br>
 
-## Example: Magic Square
+## Example #1: Magic Square
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e4/Magicsquareexample.svg)  
 <br>
+Can we fill up an n x n square with distinct positive integers in the range 1, ..., n x n such that each cell  
+contains a different integer and the sum of the integers in each row, column, and diagonal is equal?  
+
 Variables: squares on the board.  
 Domains: each variable's domain is (1, ..., n x n).   
 Constraints:  
@@ -49,7 +52,7 @@ Code implementation:
         constraints.add(csp.Constraint((name_to_variable_map[i] for i in range(column, order + 1, n)),  
                                        exact_length_magic_sum))  
     
-    # diagonal constraints
+    # diagonals constraints
     constraints.add(csp.Constraint((name_to_variable_map[diag] for diag in range(1, order + 1, n + 1)), 
                                    exact_length_magic_sum))  
     constraints.add(csp.Constraint((name_to_variable_map[diag] for diag in range(n, order, n - 1)), 
@@ -70,16 +73,69 @@ Code implementation:
     >>> 8 : 9  
     >>> 9 : 2  
 
-Alternatively, one could use any other algorithm implemented in the package (min-conflicts, simulated annealing,  
+## Example #2: n-Queens
+![](https://i.imgur.com/Ujq4LzZ.png)
+<br>
+
+Can we place n queens on an n x n chessboard so that no two queens threaten each other?
+
+Variables: columns of the board.  
+Domain: the row each queen could be placed inside a column, i.e. (1, ..., n).  
+Constraints:  
+1. No single row hold two queens: all variables are (pair-wise) all-different.
+2. The queens don't attack each other horizontally.
+3. The queens don't attack each other diagonally.
+
+Code implementation:
+   
+    n = 8
+    
+    name_to_variable_map = {col: csp.Variable(range(n)) for col in range(n)}
+    
+    
+    class NotAttackingConstraint:
+        def __init__(self, columns_difference: int):
+            self.__columns_difference = columns_difference
+    
+        def __call__(self, values: tuple) -> bool:
+            if len(values) < 2:
+                return True
+            row1, row2 = values
+            return row1 != row2 and abs(row1 - row2) != self.__columns_difference
+    
+    
+    constraints = set()
+    for col1 in range(n):
+        for col2 in range(n):
+            if col1 < col2:
+                constraints.add(csp.Constraint((name_to_variable_map[col1], name_to_variable_map[col2]),
+                                               NotAttackingConstraint(abs(col1 - col2))))
+    
+    n_queens_problem = csp.ConstraintProblem(constraints)
+    csp.min_conflicts(n_queens_problem, 1000)
+    if n_queens_problem.is_completely_consistently_assigned():
+        for name in name_to_variable_map:
+            print(name, ":", name_to_variable_map[name].value)
+    
+        >>> 0 : 4
+        >>> 1 : 6
+        >>> 2 : 0
+        >>> 3 : 3
+        >>> 4 : 1
+        >>> 5 : 7
+        >>> 6 : 5
+        >>> 7 : 2
+
+<br>
+Alternatively, one could use any other algorithm implemented in the package (constraint weighting, simulated annealing,  
  naive cycle cutset etc. see full list below).
 
 Other examples which can be found under 'examples' directory:
 1. Graph coloring.
 2. Job scheduling.
-3. n-Queens.
-4. Verbal arithmetic. 
-5. Einstein's five houses riddle.
-6. Sudoku.
+3. Verbal arithmetic. 
+4. Einstein's five houses riddle.
+5. Sudoku.
 <br>
 <br>
 
@@ -108,4 +164,4 @@ Maintaining Arc Consistency (MAC).
 <br>
 
 ## Basic API (unsound and incomplete, made for explanatory purposes ONLY)
-![](https://i.imgur.com/QxmNWv5.png)
+![](https://i.imgur.com/GjwBr45.png)
