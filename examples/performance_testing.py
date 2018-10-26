@@ -60,5 +60,5 @@ def measure_performance(tests_amount: int, problem_name: str, problem, constrain
     print("unsatisfied_constraints_amounts out of", overall_constraints_amount, "overall constraints:",
           unsatisfied_constraints_amounts)
     if hasattr(solution, "__len__"):
-        print("solution lengths:", histories_lengths)
+        print("solution lengths (number of assignment and unassignment actions):", histories_lengths)
     print("time results (seconds):", time_results)
