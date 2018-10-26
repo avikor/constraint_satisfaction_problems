@@ -128,9 +128,8 @@ Code implementation:
         >>> 6 : 5
         >>> 7 : 2
 
-<br></br>
 Alternatively, one could use any other algorithm implemented in the package (constraint weighting, simulated annealing,  
-naive cycle cutset etc. see full list down below).  
+naive cycle cutset etc. see full list down below).
 <br></br>
 Additional example which can be found in the 'examples' directory are:
 1. Graph coloring.
@@ -161,7 +160,6 @@ Maintaining Arc Consistency (MAC).
 2. Arc Consistency 4 (AC4).
 3. Path Consistency 2 (PC2).
 4. i-consistency.
-<br></br>
 <br></br>
 
 ## Basic API (unsound and incomplete, made for explanatory purposes ONLY)
