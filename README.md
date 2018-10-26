@@ -20,7 +20,7 @@ contains a different integer and the sum of the integers in each row, column, an
 
 Variables: squares on the board.  
 Domains: each variable's domain is (1, ..., n x n).   
-Constraints: - Define **magic sum** to be n * ((n * n + 1) / 2). -  
+Constraints: -- Define **magic sum** to be n * ((n * n + 1) / 2). --  
 1. All variables must be have a unique value.
 2. The values of all rows sum up to **magic sum**.
 3. The values of all columns sum up to **magic sum**.
