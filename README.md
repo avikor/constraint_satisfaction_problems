@@ -161,7 +161,6 @@ Maintaining Arc Consistency (MAC).
 3. Path Consistency 2 (PC2).
 4. i-consistency.
 <br></br>
-<br></br>
 
 ## Basic API (unsound and incomplete, made for explanatory purposes ONLY)
 ![](https://i.imgur.com/GjwBr45.png)
