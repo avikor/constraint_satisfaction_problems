@@ -212,50 +212,50 @@ if is_two_consistent:
 ###################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [411]
-# time results: [0.015625]
+# solution lengths (number of assignment and unassignment actions): [411]
+# time results (seconds): [0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [411]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [411]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [7]
-# time results: [0.015625]
+# solution lengths (number of assignment and unassignment actions): [7]
+# time results (seconds): [0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [7]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [7]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'naive_cycle_cutset' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [21]
-# time results: [0.015625]
+# solution lengths (number of assignment and unassignment actions): [21]
+# time results (seconds): [0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'min_conflicts' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# solution lengths: [20, 64]
-# time results: [0.0, 0.0]
+# solution lengths (number of assignment and unassignment actions): [20, 64]
+# time results (seconds): [0.0, 0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'constraints_weighting' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# solution lengths: [22, 96]
-# time results: [0.015625, 0.03125]
+# solution lengths (number of assignment and unassignment actions): [22, 96]
+# time results (seconds): [0.015625, 0.03125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'simulated_annealing' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.015625, 0.015625]
+# time results (seconds): [0.015625, 0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.84375, 0.046875]
+# time results (seconds): [0.84375, 0.046875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'genetic_local_search' with problem: 'map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.0, 0.015625]
+# time results (seconds): [0.0, 0.015625]
 #
 #
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -264,50 +264,50 @@ if is_two_consistent:
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [993]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [993]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [993]
-# time results: [0.03125]
+# solution lengths (number of assignment and unassignment actions): [993]
+# time results (seconds): [0.03125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [7]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [7]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [7]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [7]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [63]
-# time results: [0.015625]
+# solution lengths (number of assignment and unassignment actions): [63]
+# time results (seconds): [0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'min_conflicts' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# solution lengths: [52, 30]
-# time results: [0.015625, 0.0]
+# solution lengths (number of assignment and unassignment actions): [52, 30]
+# time results (seconds): [0.015625, 0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'constraints_weighting' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# solution lengths: [110, 868]
-# time results: [0.046875, 0.375]
+# solution lengths (number of assignment and unassignment actions): [110, 868]
+# time results (seconds): [0.046875, 0.375]
 # #################################################################################################################################################
 # displaying performance results of solver: 'simulated_annealing' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.0625, 0.0625]
+# time results (seconds): [0.0625, 0.0625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.0, 2.578125]
+# time results (seconds): [0.0, 2.578125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'genetic_local_search' with problem: 'ac3_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.015625, 0.015625]
+# time results (seconds): [0.015625, 0.015625]
 #
 #
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -316,50 +316,50 @@ if is_two_consistent:
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [371]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [371]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [371]
-# time results: [0.015625]
+# solution lengths (number of assignment and unassignment actions): [371]
+# time results (seconds): [0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [7]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [7]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [7]
-# time results: [0.015625]
+# solution lengths (number of assignment and unassignment actions): [7]
+# time results (seconds): [0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [189]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [189]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'min_conflicts' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# solution lengths: [76, 20]
-# time results: [0.015625, 0.0]
+# solution lengths (number of assignment and unassignment actions): [76, 20]
+# time results (seconds): [0.015625, 0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'constraints_weighting' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# solution lengths: [102, 280]
-# time results: [0.046875, 0.109375]
+# solution lengths (number of assignment and unassignment actions): [102, 280]
+# time results (seconds): [0.046875, 0.109375]
 # #################################################################################################################################################
 # displaying performance results of solver: 'simulated_annealing' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.015625, 0.015625]
+# time results (seconds): [0.015625, 0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [4.140625, 4.1875]
+# time results (seconds): [4.140625, 4.1875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'genetic_local_search' with problem: 'ac4_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.015625, 0.015625]
+# time results (seconds): [0.015625, 0.015625]
 #
 #
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -368,50 +368,50 @@ if is_two_consistent:
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [269]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [269]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [269]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [269]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [7]
-# time results: [0.015625]
+# solution lengths (number of assignment and unassignment actions): [7]
+# time results (seconds): [0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [7]
-# time results: [0.0]
+# solution lengths (number of assignment and unassignment actions): [7]
+# time results (seconds): [0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'naive_cycle_cutset' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0]
-# solution lengths: [63]
-# time results: [0.015625]
+# solution lengths (number of assignment and unassignment actions): [63]
+# time results (seconds): [0.015625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'min_conflicts' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# solution lengths: [34, 32]
-# time results: [0.0, 0.0]
+# solution lengths (number of assignment and unassignment actions): [34, 32]
+# time results (seconds): [0.0, 0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'constraints_weighting' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# solution lengths: [452, 638]
-# time results: [0.21875, 0.25]
+# solution lengths (number of assignment and unassignment actions): [452, 638]
+# time results (seconds): [0.21875, 0.25]
 # #################################################################################################################################################
 # displaying performance results of solver: 'simulated_annealing' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.015625, 0.03125]
+# time results (seconds): [0.015625, 0.03125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.03125, 0.0]
+# time results (seconds): [0.03125, 0.0]
 # #################################################################################################################################################
 # displaying performance results of solver: 'genetic_local_search' with problem: 'pc2_map_coloring_problem'
 # unsatisfied_constraints_amounts out of 10 overall constraints: [0, 0]
-# time results: [0.015625, 0.015625]
+# time results (seconds): [0.015625, 0.015625]
 #
 # Process finished with exit code 0
 

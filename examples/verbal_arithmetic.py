@@ -258,50 +258,50 @@ if is_two_consistent:
 ###################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [10969485]
-# time results: [91.3125]
+# solution lengths (number of assignment and unassignment actions): [10969485]
+# time results (seconds): [91.3125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [10969485]
-# time results: [285.703125]
+# solution lengths (number of assignment and unassignment actions): [10969485]
+# time results (seconds): [285.703125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [43]
-# time results: [0.359375]
+# solution lengths (number of assignment and unassignment actions): [43]
+# time results (seconds): [0.359375]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [43]
-# time results: [0.078125]
+# solution lengths (number of assignment and unassignment actions): [43]
+# time results (seconds): [0.078125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'naive_cycle_cutset' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [868952]
-# time results: [27.703125]
+# solution lengths (number of assignment and unassignment actions): [868952]
+# time results (seconds): [27.703125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'min_conflicts' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0, 1]
-# solution lengths: [3740, 200018]
-# time results: [0.734375, 40.703125]
+# solution lengths (number of assignment and unassignment actions): [3740, 200018]
+# time results (seconds): [0.734375, 40.703125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'constraints_weighting' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [5, 5]
-# solution lengths: [20000, 20000]
-# time results: [17.375, 17.40625]
+# solution lengths (number of assignment and unassignment actions): [20000, 20000]
+# time results (seconds): [17.375, 17.40625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'simulated_annealing' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0, 0]
-# time results: [3.546875, 7.96875]
+# time results (seconds): [3.546875, 7.96875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0, 0]
-# time results: [26.515625, 1.859375]
+# time results (seconds): [26.515625, 1.859375]
 # #################################################################################################################################################
 # displaying performance results of solver: 'genetic_local_search' with problem: 'verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [1, 1]
-# time results: [1.234375, 1.34375]
+# time results (seconds): [1.234375, 1.34375]
 #
 #
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -310,50 +310,50 @@ if is_two_consistent:
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [210921]
-# time results: [1.28125]
+# solution lengths (number of assignment and unassignment actions): [210921]
+# time results (seconds): [1.28125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [210921]
-# time results: [3.671875]
+# solution lengths (number of assignment and unassignment actions): [210921]
+# time results (seconds): [3.671875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [45]
-# time results: [0.0625]
+# solution lengths (number of assignment and unassignment actions): [45]
+# time results (seconds): [0.0625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [45]
-# time results: [0.0625]
+# solution lengths (number of assignment and unassignment actions): [45]
+# time results (seconds): [0.0625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [175689]
-# time results: [3.046875]
+# solution lengths (number of assignment and unassignment actions): [175689]
+# time results (seconds): [3.046875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'min_conflicts' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [1, 1]
-# solution lengths: [200018, 200018]
-# time results: [40.671875, 38.046875]
+# solution lengths (number of assignment and unassignment actions): [200018, 200018]
+# time results (seconds): [40.671875, 38.046875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'constraints_weighting' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [4, 4]
-# solution lengths: [20000, 20000]
-# time results: [15.328125, 15.296875]
+# solution lengths (number of assignment and unassignment actions): [20000, 20000]
+# time results (seconds): [15.328125, 15.296875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'simulated_annealing' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0, 0]
-# time results: [0.5, 4.609375]
+# time results (seconds): [0.5, 4.609375]
 # #################################################################################################################################################
 # displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0, 0]
-# time results: [4.03125, 11.5]
+# time results (seconds): [4.03125, 11.5]
 # #################################################################################################################################################
 # displaying performance results of solver: 'genetic_local_search' with problem: 'ac3_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [1, 1]
-# time results: [1.46875, 1.421875]
+# time results (seconds): [1.46875, 1.421875]
 #
 #
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -362,50 +362,50 @@ if is_two_consistent:
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [225783]
-# time results: [1.46875]
+# solution lengths (number of assignment and unassignment actions): [225783]
+# time results (seconds): [1.46875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [225783]
-# time results: [5.671875]
+# solution lengths (number of assignment and unassignment actions): [225783]
+# time results (seconds): [5.671875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [45]
-# time results: [0.0625]
+# solution lengths (number of assignment and unassignment actions): [45]
+# time results (seconds): [0.0625]
 # #################################################################################################################################################
 # displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [45]
-# time results: [0.078125]
+# solution lengths (number of assignment and unassignment actions): [45]
+# time results (seconds): [0.078125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0]
-# solution lengths: [65759]
-# time results: [2.296875]
+# solution lengths (number of assignment and unassignment actions): [65759]
+# time results (seconds): [2.296875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'min_conflicts' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0, 1]
-# solution lengths: [3350, 200018]
-# time results: [0.65625, 41.21875]
+# solution lengths (number of assignment and unassignment actions): [3350, 200018]
+# time results (seconds): [0.65625, 41.21875]
 # #################################################################################################################################################
 # displaying performance results of solver: 'constraints_weighting' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [4, 4]
-# solution lengths: [20000, 20000]
-# time results: [16.765625, 16.828125]
+# solution lengths (number of assignment and unassignment actions): [20000, 20000]
+# time results (seconds): [16.765625, 16.828125]
 # #################################################################################################################################################
 # displaying performance results of solver: 'simulated_annealing' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [0, 0]
-# time results: [4.140625, 1.609375]
+# time results (seconds): [4.140625, 1.609375]
 # #################################################################################################################################################
 # displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [1, 0]
-# time results: [76.03125, 17.109375]
+# time results (seconds): [76.03125, 17.109375]
 # #################################################################################################################################################
 # displaying performance results of solver: 'genetic_local_search' with problem: 'ac4_verbal_arithmetic_problem'
 # unsatisfied_constraints_amounts out of 5 overall constraints: [1, 1]
-# time results: [1.5, 1.234375]
+# time results (seconds): [1.5, 1.234375]
 #
 # Process finished with exit code 0
 
