@@ -215,3 +215,162 @@ if is_two_consistent:
         csp.GeneralGeneticConstraintProblem(two_consistency_n_queens_problem, 0.1)
     measure_performance(2, "two_consistency_n_queens_problem", general_genetic_n_queens_problem,
                         "genetic_local_search", 100, 100, 0.1)
+
+
+
+# /////////////////////////////////////////////////////// PERFORMANCE RESULTS /////////////////////////////////////////////////////////////////////
+###################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [864816]
+# time results: [10.1875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [864816]
+# time results: [37.328125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [8]
+# time results: [0.109375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [8]
+# time results: [0.09375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [28044]
+# time results: [7.765625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# solution lengths: [104, 64]
+# time results: [0.078125, 0.03125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [4, 5]
+# solution lengths: [20000, 20000]
+# time results: [32.109375, 33.65625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# time results: [0.484375, 0.40625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# time results: [4.4375, 4.28125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [1, 1]
+# time results: [3.578125, 3.78125]
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using ac3 as a preprocessing stage which took 0.015625 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [7686]
+# time results: [0.09375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [7686]
+# time results: [0.390625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [22]
+# time results: [0.046875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [22]
+# time results: [0.046875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [2974]
+# time results: [0.125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# solution lengths: [52, 32]
+# time results: [0.015625, 0.015625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# solution lengths: [1136, 108]
+# time results: [1.078125, 0.109375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# time results: [0.015625, 1.21875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# time results: [2.125, 2.046875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'ac3_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# time results: [0.046875, 0.0]
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using ac4 as a preprocessing stage which took 0.03125 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [1864]
+# time results: [0.015625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [1864]
+# time results: [0.078125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [12]
+# time results: [0.03125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [12]
+# time results: [0.046875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0]
+# solution lengths: [1044]
+# time results: [0.0625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# solution lengths: [18, 80]
+# time results: [0.0, 0.03125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# solution lengths: [110, 166]
+# time results: [0.109375, 0.15625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# time results: [0.71875, 0.375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# time results: [2.078125, 2.09375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'ac4_n_queens_problem'
+# unsatisfied_constraints_amounts out of 28 overall constraints: [0, 0]
+# time results: [0.015625, 0.03125]
+#
+# Process finished with exit code 0
+
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
