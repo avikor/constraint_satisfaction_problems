@@ -132,7 +132,7 @@ Code implementation:
 Alternatively, one could use any other algorithm implemented in the package (constraint weighting, simulated annealing,  
  naive cycle cutset etc. see full list down below).
 <br>
-Additional usage cases which can be found in the 'examples' directory are:
+Additional usage cases which can be found in the 'examples' directory are:  
 1. Graph coloring.
 2. Job scheduling.
 3. Verbal arithmetic. 
