@@ -1,6 +1,6 @@
 ## Basic Definitions
 A _Constraint Satisfaction Problem (CSP)_ is a triplet _(X, D, C)_ where _X_ is a set of variables X<sub>1</sub>, ...,X<sub>n</sub>.  
-_D_ is a set of domains D<sub>1</sub>, ...,D<sub>n</sub>, where each variable X<sub>i</sub> is assigned by values from domain D<sub>i</sub>.  
+_D_ is a set of domains D<sub>1</sub>, ...,D<sub>n</sub>, where each variable X<sub>i</sub> is assigned with values from domain D<sub>i</sub>.  
 And _C_ is a set of constraints C<sub>1</sub>(S<sub>1</sub>), ..., C<sub>m</sub>(S<sub>m</sub>), where each S<sub>i</sub> is a set of variables on which C<sub>i</sub> defines a constraint.  
 A state of _Constraint Satisfaction Problem_ instance is defined by an **assignment** of values to some or all of its variables.  
 A **complete assignment** is a state in which every variable is assigned with a value from its domain.  
