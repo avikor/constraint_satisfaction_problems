@@ -1,6 +1,6 @@
 ## Basic Definitions
 A _Constraint Satisfaction Problem (CSP)_ is a triplet _(X, D, C)_ where _X_ is a set of variables X<sub>1</sub>, ...,X<sub>n</sub>.  
-_D_ is a set of domains D<sub>1</sub>, ...,D<sub>n</sub>, where each variable X<sub>i</sub> is assigned by values from domain D<sub>i</sub>.  
+_D_ is a set of domains D<sub>1</sub>, ...,D<sub>n</sub>, where each variable X<sub>i</sub> is assigned with values from domain D<sub>i</sub>.  
 And _C_ is a set of constraints C<sub>1</sub>(S<sub>1</sub>), ..., C<sub>m</sub>(S<sub>m</sub>), where each S<sub>i</sub> is a set of variables on which C<sub>i</sub> defines a constraint.  
 A state of _Constraint Satisfaction Problem_ instance is defined by an **assignment** of values to some or all of its variables.  
 A **complete assignment** is a state in which every variable is assigned with a value from its domain.  
@@ -9,19 +9,19 @@ A **consistent assignment** is a state in which the assigned variables do not vi
 A **complete consistent assignment** is a solution to a _Constraint Satisfaction Problem_ instance.  
 A **constraint graph** (could be a hypergraph) is a graph in which the nodes correspond to varaibles  
 and the edges correspond to constraints, i.e. V = X and E = C.
-<br>
-<br>
+<br></br>
+<br></br>
 
 ## Example #1: Magic Square
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e4/Magicsquareexample.svg)  
-<br>
-Can we fill up an n x n square with distinct positive integers in the range 1, ..., n x n such that each cell  
-contains a different integer and the sum of the integers in each row, column, and diagonal is equal?  
+<br></br>
+Problem: fill up an n x n square with distinct positive integers in the range 1, ..., n x n such that each cell  
+contains a different integer and the sum of the integers in each row, column, and diagonal is equal.  
+-- Define **magic sum** to be n * ((n * n + 1) / 2).  
 
 Variables: squares on the board.  
 Domains: each variable's domain is (1, ..., n x n).   
 Constraints:  
--- Define **magic sum** to be n * ((n * n + 1) / 2).  
 1. All variables must be have a unique value.
 2. The values of all rows sum up to **magic sum**.
 3. The values of all columns sum up to **magic sum**.
@@ -76,14 +76,14 @@ Code implementation:
 
 ## Example #2: n-Queens
 ![](https://i.imgur.com/Ujq4LzZ.png)
-<br>
+<br></br>
 
-Can we place n queens on an n x n chessboard so that no two queens threaten each other?
+Problem: place n queens on an n x n chessboard so that no two queens threaten each other.
 
 Variables: columns of the board.  
 Domain: the row each queen could be placed inside a column, i.e. each variable's domain is (1, ..., n).  
 Constraints:  
-1. No single row hold two queens: all variables are (pair-wise) all-different.
+1. No single row hold two queens: all variables are different.
 2. The queens don't attack each other horizontally.
 3. The queens don't attack each other diagonally.
 
@@ -128,24 +128,23 @@ Code implementation:
         >>> 6 : 5
         >>> 7 : 2
 
-<br>
+<br></br>
 Alternatively, one could use any other algorithm implemented in the package (constraint weighting, simulated annealing,  
- naive cycle cutset etc. see full list below).
-
-Other examples which can be found under 'examples' directory:
+naive cycle cutset etc. see full list down below).  
+<br></br>
+Additional example which can be found in the 'examples' directory are:
 1. Graph coloring.
 2. Job scheduling.
-3. Verbal arithmetic. 
+3. Verbal arithmetic
 4. Einstein's five houses riddle.
 5. Sudoku.
-<br>
-<br>
+
 
 ## Implemented Algorithms List
 #### Solvers
 1. backtracking search (with or without forward checking).
 2. heuristic backtracking search: defaults to Minimum Remaining Values for choosing next unassigned variable,  
-and Degree heuristic as tie breaker. Defaults to Least Constraining Value for domain sorting of chosen unassigned variable.  
+with Degree heuristic as tie breaker. Defaults to Least Constraining Value for domain sorting of chosen unassigned variable.  
 Allows users to define, pick and choose custom heuristics. Can be used with or without forward checking.
 3. min conflicts (with or without tabu search).
 4. constraints weighting.
@@ -154,7 +153,7 @@ Allows users to define, pick and choose custom heuristics. Can be used with or w
 7. simulated annealing.
 8. random-restart first-choice hill climbing.
 9. genetic local search.
-<br>
+<br></br>
 
 #### preprocessing
 1. Arc Consistency 3 (AC3). Could be given to both backtracking algorithms and thus implement  
@@ -162,8 +161,8 @@ Maintaining Arc Consistency (MAC).
 2. Arc Consistency 4 (AC4).
 3. Path Consistency 2 (PC2).
 4. i-consistency.
-<br>
-<br>
+<br></br>
+<br></br>
 
 ## Basic API (unsound and incomplete, made for explanatory purposes ONLY)
 ![](https://i.imgur.com/GjwBr45.png)
