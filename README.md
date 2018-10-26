@@ -10,7 +10,6 @@ A **complete consistent assignment** is a solution to a _Constraint Satisfaction
 A **constraint graph** (could be a hypergraph) is a graph in which the nodes correspond to varaibles  
 and the edges correspond to constraints, i.e. V = X and E = C.
 <br></br>
-<br></br>
 
 ## Example #1: Magic Square
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e4/Magicsquareexample.svg)  
