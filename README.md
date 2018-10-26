@@ -15,13 +15,12 @@ and the edges correspond to constraints, i.e. V = X and E = C.
 ## Example #1: Magic Square
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e4/Magicsquareexample.svg)  
 <br>
-Can we fill up an n x n square with distinct positive integers in the range 1, ..., n x n such that each cell  
-contains a different integer and the sum of the integers in each row, column, and diagonal is equal?  
+Problem: fill up an n x n square with distinct positive integers in the range 1, ..., n x n such that each cell  
+contains a different integer and the sum of the integers in each row, column, and diagonal is equal.  
 
 Variables: squares on the board.  
 Domains: each variable's domain is (1, ..., n x n).   
-Constraints:  
--- Define **magic sum** to be n * ((n * n + 1) / 2).  
+Constraints: - Define **magic sum** to be n * ((n * n + 1) / 2). -  
 1. All variables must be have a unique value.
 2. The values of all rows sum up to **magic sum**.
 3. The values of all columns sum up to **magic sum**.
@@ -78,12 +77,12 @@ Code implementation:
 ![](https://i.imgur.com/Ujq4LzZ.png)
 <br>
 
-Can we place n queens on an n x n chessboard so that no two queens threaten each other?
+Problem: place n queens on an n x n chessboard so that no two queens threaten each other.
 
 Variables: columns of the board.  
 Domain: the row each queen could be placed inside a column, i.e. each variable's domain is (1, ..., n).  
 Constraints:  
-1. No single row hold two queens: all variables are (pair-wise) all-different.
+1. No single row hold two queens: all variables are different.
 2. The queens don't attack each other horizontally.
 3. The queens don't attack each other diagonally.
 
@@ -132,7 +131,7 @@ Code implementation:
 Alternatively, one could use any other algorithm implemented in the package (constraint weighting, simulated annealing,  
  naive cycle cutset etc. see full list below).
 
-Other examples which can be found under 'examples' directory:
+Additional examples which can be found under 'examples' directory:
 1. Graph coloring.
 2. Job scheduling.
 3. Verbal arithmetic. 
@@ -145,7 +144,7 @@ Other examples which can be found under 'examples' directory:
 #### Solvers
 1. backtracking search (with or without forward checking).
 2. heuristic backtracking search: defaults to Minimum Remaining Values for choosing next unassigned variable,  
-and Degree heuristic as tie breaker. Defaults to Least Constraining Value for domain sorting of chosen unassigned variable.  
+with Degree heuristic as tie breaker. Defaults to Least Constraining Value for domain sorting of chosen unassigned variable.  
 Allows users to define, pick and choose custom heuristics. Can be used with or without forward checking.
 3. min conflicts (with or without tabu search).
 4. constraints weighting.
