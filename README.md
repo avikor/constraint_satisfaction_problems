@@ -17,7 +17,6 @@ and the edges correspond to constraints, i.e. V = X and E = C.
 <br>
 Problem: fill up an n x n square with distinct positive integers in the range 1, ..., n x n such that each cell  
 contains a different integer and the sum of the integers in each row, column, and diagonal is equal.  
-<br>
 
 -- Define **magic sum** to be n * ((n * n + 1) / 2).  
 Variables: squares on the board.  
