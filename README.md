@@ -128,10 +128,8 @@ Code implementation:
         >>> 6 : 5
         >>> 7 : 2
 
-<br></br>
 Alternatively, one could use any other algorithm implemented in the package (constraint weighting, simulated annealing,  
 naive cycle cutset etc. see full list down below).  
-<br></br>
 Additional example which can be found in the 'examples' directory are:
 1. Graph coloring.
 2. Job scheduling.
