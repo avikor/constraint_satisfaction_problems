@@ -56,7 +56,7 @@ magic_square_problem = csp.ConstraintProblem(constraints)
 # 9 : 8
 # /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+"""
 measure_performance(1, "magic_square_problem", magic_square_problem,
                     "backtracking_search", with_history=True)
 measure_performance(1, "magic_square_problem", magic_square_problem,
@@ -112,7 +112,7 @@ if ac3_is_arc_consistent:
     general_genetic_ac3_magic_square_problem = csp.GeneralGeneticConstraintProblem(ac3_magic_square_problem, 0.1)
     measure_performance(2, "general_genetic_ac3_magic_square_problem", general_genetic_ac3_magic_square_problem,
                         "genetic_local_search", 1000, 100, 0.1)
-
+"""
 ac4_magic_square_problem = copy.deepcopy(magic_square_problem)
 ac4_magic_square_problem.unassign_all_variables()
 ac4_start_time = time.process_time()
@@ -315,5 +315,110 @@ if is_two_consistent:
 # displaying performance results of solver: 'genetic_local_search' with problem: 'general_genetic_ac3_magic_square_problem'
 # unsatisfied_constraints_amounts out of 9 overall constraints: [1, 1]
 # time results (seconds): [19.640625, 19.6875]
-
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using ac4 as a preprocessing stage which took 0.015625 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search' with problem: 'ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [56062539]
+# time results (seconds): [358.40625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [56062539]
+# time results (seconds): [1911.171875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [35]
+# time results (seconds): [1.71875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [35]
+# time results (seconds): [0.171875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [9]
+# solution lengths (number of assignment and unassignment actions): [0]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [1, 2]
+# solution lengths (number of assignment and unassignment actions): [200018, 200018]
+# time results (seconds): [81.71875, 81.21875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [8, 7]
+# solution lengths (number of assignment and unassignment actions): [20000, 20000]
+# time results (seconds): [30.359375, 30.328125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0, 0]
+# time results (seconds): [18.46875, 6.796875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [1, 1]
+# time results (seconds): [95.5, 102.53125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'general_genetic_ac4_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [3, 4]
+# time results (seconds): [18.46875, 17.796875]
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using 2-consistency as a preprocessing stage which took 1.625 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search' with problem: 'two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [27706725]
+# time results (seconds): [262.15625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [27706725]
+# time results (seconds): [977.09375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [53]
+# time results (seconds): [1.109375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [53]
+# time results (seconds): [0.453125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [9]
+# solution lengths (number of assignment and unassignment actions): [0]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [1, 4]
+# solution lengths (number of assignment and unassignment actions): [200018, 200018]
+# time results (seconds): [158.078125, 134.734375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [8, 9]
+# solution lengths (number of assignment and unassignment actions): [20000, 20000]
+# time results (seconds): [32.296875, 31.765625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0, 1]
+# time results (seconds): [121.46875, 653.296875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [0, 0]
+# time results (seconds): [258.015625, 78.578125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'general_genetic_two_consistency_magic_square_problem'
+# unsatisfied_constraints_amounts out of 9 overall constraints: [1, 2]
+# time results (seconds): [269.578125, 246.65625]
+#
+# Process finished with exit code 0
 # /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
