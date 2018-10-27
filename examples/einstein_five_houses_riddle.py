@@ -292,7 +292,7 @@ measure_performance(2, "einstein_problem", einstein_problem,
                     "random_restart_first_choice_hill_climbing", 100, 100, 10)
 general_genetic_einstein_problem = csp.GeneralGeneticConstraintProblem(einstein_problem, 0.1)
 measure_performance(2, "einstein_problem", general_genetic_einstein_problem,
-                    "genetic_local_search", 1000, 1000, 0.1)
+                    "genetic_local_search", 100, 100, 0.1)
 
 
 ac3_einstein_problem = copy.deepcopy(einstein_problem)
@@ -306,10 +306,6 @@ if ac3_is_arc_consistent:
     print("-" * 145)
     print("using ac3 as a preprocessing stage which took", ac3_end_time - ac3_start_time, "seconds")
     print("-" * 145)
-    measure_performance(1, "ac3_einstein_problem", ac3_einstein_problem,
-                        "backtracking_search", with_history=True)
-    measure_performance(1, "ac3_einstein_problem", ac3_einstein_problem,
-                        "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac3_einstein_problem", ac3_einstein_problem,
                         "heuristic_backtracking_search", inference=None, with_history=True)
     measure_performance(1, "ac3_einstein_problem", ac3_einstein_problem,
@@ -340,10 +336,6 @@ if ac4_is_arc_consistent:
     print("-" * 145)
     print("using ac4 as a preprocessing stage which took", ac4_end_time - ac4_start_time, "seconds")
     print("-" * 145)
-    measure_performance(1, "ac4_einstein_problem", ac4_einstein_problem,
-                        "backtracking_search", with_history=True)
-    measure_performance(1, "ac4_einstein_problem", ac4_einstein_problem,
-                        "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac4_einstein_problem", ac4_einstein_problem,
                         "heuristic_backtracking_search", inference=None, with_history=True)
     measure_performance(1, "ac4_einstein_problem", ac4_einstein_problem,
@@ -431,3 +423,132 @@ if is_two_consistent:
         csp.GeneralGeneticConstraintProblem(two_consistency_einstein_problem, 0.1)
     measure_performance(2, "two_consistency_verbal_arithmetic_problem",
                         general_genetic_two_consistency_einstein_problem, "genetic_local_search", 100, 100, 0.1)
+
+
+
+# /////////////////////////////////////////////////////// PERFORMANCE RESULTS /////////////////////////////////////////////////////////////////////
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [317]
+# time results (seconds): [1.734375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [317]
+# time results (seconds): [2.015625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [80]
+# solution lengths (number of assignment and unassignment actions): [0]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [2, 1]
+# solution lengths (number of assignment and unassignment actions): [200050, 200050]
+# time results (seconds): [333.546875, 332.453125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [14, 16]
+# solution lengths (number of assignment and unassignment actions): [20000, 20000]
+# time results (seconds): [195.65625, 197.671875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [1, 1]
+# time results (seconds): [527.453125, 523.734375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [2, 2]
+# time results (seconds): [473.453125, 474.375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [3, 3]
+# time results (seconds): [10.75, 10.578125]
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using ac3 as a preprocessing stage which took 0.078125 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac3_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [247]
+# time results (seconds): [1.265625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac3_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [247]
+# time results (seconds): [1.46875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac3_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [80]
+# solution lengths (number of assignment and unassignment actions): [0]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'ac3_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [2, 2]
+# solution lengths (number of assignment and unassignment actions): [200050, 200050]
+# time results (seconds): [294.84375, 293.53125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'ac3_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [11, 12]
+# solution lengths (number of assignment and unassignment actions): [20000, 20000]
+# time results (seconds): [172.859375, 172.46875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'ac3_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [0, 1]
+# time results (seconds): [413.96875, 518.515625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac3_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [2, 2]
+# time results (seconds): [442.84375, 441.34375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'ac3_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [2, 2]
+# time results (seconds): [10.53125, 10.546875]
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using ac4 as a preprocessing stage which took 0.046875 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac4_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [245]
+# time results (seconds): [1.34375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac4_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [245]
+# time results (seconds): [1.53125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac4_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [80]
+# solution lengths (number of assignment and unassignment actions): [0]
+# time results (seconds): [0.015625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'ac4_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [1, 2]
+# solution lengths (number of assignment and unassignment actions): [200050, 200050]
+# time results (seconds): [281.71875, 304.828125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'ac4_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [12, 13]
+# solution lengths (number of assignment and unassignment actions): [20000, 20000]
+# time results (seconds): [190.71875, 190.609375]
+#################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'ac4_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [1, 1]
+# time results (seconds): [518.59375, 523.484375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac4_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [2, 2]
+# time results (seconds): [442.65625, 444.84375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'ac4_einstein_problem'
+# unsatisfied_constraints_amounts out of 80 overall constraints: [3, 3]
+# time results (seconds): [10.15625, 10.1875]
+#
+# Process finished with exit code 0
+
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
