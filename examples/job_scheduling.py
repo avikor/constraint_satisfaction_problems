@@ -102,9 +102,9 @@ measure_performance(1, "car_assembly_problem", car_assembly_problem,
 measure_performance(1, "car_assembly_problem", car_assembly_problem,
                     "heuristic_backtracking_search", with_history=True)
 measure_performance(2, "car_assembly_problem", car_assembly_problem,
-                    "min_conflicts", 100, with_history=True)
+                    "min_conflicts", 100000, with_history=True)
 measure_performance(2, "car_assembly_problem", car_assembly_problem,
-                    "constraints_weighting", 100, with_history=True)
+                    "constraints_weighting", 100000, with_history=True)
 measure_performance(2, "car_assembly_problem", car_assembly_problem,
                     "simulated_annealing", 100000, 0.5, 0.99999)
 measure_performance(2, "car_assembly_problem", car_assembly_problem,
@@ -254,3 +254,145 @@ if is_two_consistent:
                         "genetic_local_search", 100, 100, 0.1)
 
 
+
+# /////////////////////////////////////////////////////// PERFORMANCE RESULTS /////////////////////////////////////////////////////////////////////
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [1579]
+# time results (seconds): [13.0625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [1579]
+# time results (seconds): [14.53125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [1, 0]
+# solution lengths (number of assignment and unassignment actions): [200030, 858]
+# time results (seconds): [629.140625, 2.578125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [9, 13]
+# solution lengths (number of assignment and unassignment actions): [200000, 200000]
+# time results (seconds): [2121.328125, 2127.15625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [1, 1]
+# time results (seconds): [244.34375, 243.328125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [4, 5]
+# time results (seconds): [1.296875, 1.078125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [3, 3]
+# time results (seconds): [3.515625, 3.71875]
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using ac3 as a preprocessing stage which took 0.25 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [0.046875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [0.046875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [0.015625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# solution lengths (number of assignment and unassignment actions): [34, 32]
+# time results (seconds): [0.0, 0.015625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# solution lengths (number of assignment and unassignment actions): [26, 74]
+# time results (seconds): [0.046875, 0.171875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# time results (seconds): [0.15625, 0.078125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# time results (seconds): [0.796875, 0.09375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'ac3_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# time results (seconds): [0.015625, 0.03125]
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using ac4 as a preprocessing stage which took 0.296875 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [0.0625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [0.046875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [15]
+# time results (seconds): [103.90625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# solution lengths (number of assignment and unassignment actions): [34, 36]
+# time results (seconds): [0.0, 0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# solution lengths (number of assignment and unassignment actions): [34, 14]
+# time results (seconds): [0.078125, 0.03125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# time results (seconds): [0.015625, 0.203125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# time results (seconds): [0.0, 0.234375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'ac4_car_assembly_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# time results (seconds): [0.015625, 0.015625]
+#
+# Process finished with exit code 0
+
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
