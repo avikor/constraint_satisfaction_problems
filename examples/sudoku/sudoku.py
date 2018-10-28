@@ -169,38 +169,123 @@ if pc2_is_path_consistent:
                         "genetic_local_search", 10, 10, 0.1, read_only_variables=read_only_variables)
 
 
-two_consistency_start_time = time.process_time()
-is_two_consistent = csp.i_consistency(two_consistency_sudoku_problem, 2)
-two_consistency_end_time = time.process_time()
-if is_two_consistent:
-    print()
-    print()
-    print("-" * 145)
-    print("using 2-consistency as a preprocessing stage which took",
-          two_consistency_end_time - two_consistency_start_time, "seconds")
-    print("-" * 145)
-    measure_performance(1, "two_consistency_sudoku_problem", two_consistency_sudoku_problem,
-                        "backtracking_search", with_history=True, read_only_variables=read_only_variables)
-    measure_performance(1, "two_consistency_sudoku_problem", two_consistency_sudoku_problem,
-                        "backtracking_search", inference=csp.forward_check, with_history=True,
-                        read_only_variables=read_only_variables)
-    measure_performance(1, "two_consistency_sudoku_problem", two_consistency_sudoku_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True,
-                        read_only_variables=read_only_variables)
-    measure_performance(1, "two_consistency_sudoku_problem", two_consistency_sudoku_problem,
-                        "heuristic_backtracking_search", with_history=True,
-                        read_only_variables=read_only_variables)
-    measure_performance(1, "two_consistency_sudoku_problem", two_consistency_sudoku_problem,
-                        "naive_cycle_cutset", with_history=True,
-                        read_only_variables=read_only_variables)
-    measure_performance(2, "two_consistency_sudoku_problem", two_consistency_sudoku_problem,
-                        "min_conflicts", 100000, with_history=True,
-                        read_only_variables=read_only_variables)
-    measure_performance(2, "two_consistency_sudoku_problem", two_consistency_sudoku_problem,
-                        "constraints_weighting", 10000, with_history=True,
-                        read_only_variables=read_only_variables)
-    general_genetic_two_consistency_sudoku_problem = \
-        csp.GeneralGeneticConstraintProblem(two_consistency_sudoku_problem, 0.1)
-    measure_performance(2, "general_genetic_two_consistency_sudoku_problem",
-                        general_genetic_two_consistency_sudoku_problem, "genetic_local_search", 10, 10, 0.1,
-                        read_only_variables=read_only_variables)
+
+# /////////////////////////////////////////////////////// PERFORMANCE RESULTS /////////////////////////////////////////////////////////////////////
+###################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [47]
+# time results (seconds): [1.140625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [47]
+# time results (seconds): [1.25]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [27]
+# solution lengths (number of assignment and unassignment actions): [0]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [27, 25]
+# solution lengths (number of assignment and unassignment actions): [294, 294]
+# time results (seconds): [0.484375, 0.46875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [27, 27]
+# solution lengths (number of assignment and unassignment actions): [200, 200]
+# time results (seconds): [10.046875, 10.234375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'simulated_annealing' with problem: 'sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# time results (seconds): [16.1875, 42.203125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'random_restart_first_choice_hill_climbing' with problem: 'sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [18, 17]
+# time results (seconds): [9.21875, 9.171875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'general_genetic_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [18, 18]
+# time results (seconds): [10.125, 10.140625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'sudoku_genetic_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [18, 18]
+# time results (seconds): [10.140625, 10.140625]
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using ac3 as a preprocessing stage which took 0.234375 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search' with problem: 'ac3_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [81]
+# time results (seconds): [0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'backtracking_search_with_forward_checking' with problem: 'ac3_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [81]
+# time results (seconds): [0.0625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac3_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [81]
+# time results (seconds): [0.515625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac3_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [81]
+# time results (seconds): [0.546875]
+# #################################################################################################################################################
+# displaying performance results of solver: 'naive_cycle_cutset' with problem: 'ac3_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [81]
+# time results (seconds): [0.015625]
+# #################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'ac3_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# solution lengths (number of assignment and unassignment actions): [162, 162]
+# time results (seconds): [0.0, 0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'ac3_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# solution lengths (number of assignment and unassignment actions): [0, 0]
+# time results (seconds): [0.0, 0.0]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'general_genetic_ac3_magic_square_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0, 0]
+# time results (seconds): [0.53125, 0.53125]
+#
+#
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# using ac4 as a preprocessing stage which took 0.03125 seconds
+# -------------------------------------------------------------------------------------------------------------------------------------------------
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search' with problem: 'ac4_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [81]
+# time results (seconds): [2.375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'heuristic_backtracking_search_with_forward_checking' with problem: 'ac4_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [0]
+# solution lengths (number of assignment and unassignment actions): [81]
+# time results (seconds): [2.625]
+####################################################################################################################################################
+# displaying performance results of solver: 'min_conflicts' with problem: 'ac4_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [10, 12]
+# solution lengths (number of assignment and unassignment actions): [200162, 200162]
+# time results (seconds): [353.875, 323.203125]
+# #################################################################################################################################################
+# displaying performance results of solver: 'constraints_weighting' with problem: 'ac4_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [27, 27]
+# solution lengths (number of assignment and unassignment actions): [20000, 20000]
+# time results (seconds): [940.84375, 951.34375]
+# #################################################################################################################################################
+# displaying performance results of solver: 'genetic_local_search' with problem: 'general_genetic_ac4_sudoku_problem'
+# unsatisfied_constraints_amounts out of 27 overall constraints: [25, 26]
+# time results (seconds): [0.109375, 0.09375]
+#
+# Process finished with exit code 0
+
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
