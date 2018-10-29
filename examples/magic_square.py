@@ -56,7 +56,7 @@ magic_square_problem = csp.ConstraintProblem(constraints)
 # 9 : 8
 # /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-"""
+
 measure_performance(1, "magic_square_problem", magic_square_problem,
                     "backtracking_search", with_history=True)
 measure_performance(1, "magic_square_problem", magic_square_problem,
@@ -112,7 +112,7 @@ if ac3_is_arc_consistent:
     general_genetic_ac3_magic_square_problem = csp.GeneralGeneticConstraintProblem(ac3_magic_square_problem, 0.1)
     measure_performance(2, "general_genetic_ac3_magic_square_problem", general_genetic_ac3_magic_square_problem,
                         "genetic_local_search", 1000, 100, 0.1)
-"""
+
 ac4_magic_square_problem = copy.deepcopy(magic_square_problem)
 ac4_magic_square_problem.unassign_all_variables()
 ac4_start_time = time.process_time()
