@@ -19,15 +19,18 @@ n = 8
 name_to_variable_map = {col: csp.Variable(range(n)) for col in range(n)}
 
 
-class NotAttackingConstraint:
-    def __init__(self, columns_difference: int):
-        self.__columns_difference = columns_difference
-
-    def __call__(self, values: tuple) -> bool:
+def get_not_attacking_constraint(columns_difference: int) -> csp.ConstraintEvaluator:
+    def not_attacking_constraint(values: tuple) -> bool:
         if len(values) < 2:
             return True
         row1, row2 = values
-        return row1 != row2 and abs(row1 - row2) != self.__columns_difference
+        return row1 != row2 and abs(row1 - row2) != columns_difference
+    return not_attacking_constraint
+
+
+not_attacking_constraints = dict()
+for i in range(1, n):
+    not_attacking_constraints[i] = get_not_attacking_constraint(i)
 
 
 constraints = set()
@@ -35,7 +38,7 @@ for col1 in range(n):
     for col2 in range(n):
         if col1 < col2:
             constraints.add(csp.Constraint((name_to_variable_map[col1], name_to_variable_map[col2]),
-                                           NotAttackingConstraint(abs(col1 - col2))))
+                                           not_attacking_constraints[abs(col1 - col2)]))
 
 n_queens_problem = csp.ConstraintProblem(constraints)
 
