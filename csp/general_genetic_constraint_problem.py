@@ -40,11 +40,11 @@ class GeneralGeneticConstraintProblem(GeneticConstraintProblem):
     def perform_natural_selection(self, population: List[Assignment]) -> List[Assignment]:
         """ half truncation selection. """
         population.sort(key=self.calculate_fitness, reverse=True)
-        return population[:len(population)//2]
+        return population[:len(population) >> 1]
 
     def reproduce_next_generation(self, old_generation: List[Assignment]) -> List[Assignment]:
         new_generation = list()
-        for i in range(len(old_generation) * 2):
+        for i in range(len(old_generation) << 1):
             parent1, parent2 = sample(old_generation, 2)
             new_generation.append(self.__reproduce(parent1, parent2))
         return new_generation
