@@ -277,9 +277,9 @@ einstein_problem = csp.ConstraintProblem(constraints)
 
 
 measure_performance(1, "einstein_problem", einstein_problem,
-                    "heuristic_backtracking_search", inference=None, with_history=True)
-measure_performance(1, "einstein_problem", einstein_problem,
                     "heuristic_backtracking_search", with_history=True)
+measure_performance(1, "einstein_problem", einstein_problem,
+                    "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
 measure_performance(1, "einstein_problem", einstein_problem,
                     "naive_cycle_cutset", with_history=True)
 measure_performance(2, "einstein_problem", einstein_problem,
@@ -307,9 +307,9 @@ if ac3_is_arc_consistent:
     print("using ac3 as a preprocessing stage which took", ac3_end_time - ac3_start_time, "seconds")
     print("-" * 145)
     measure_performance(1, "ac3_einstein_problem", ac3_einstein_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "ac3_einstein_problem", ac3_einstein_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "ac3_einstein_problem", ac3_einstein_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac3_einstein_problem", ac3_einstein_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "ac3_einstein_problem", ac3_einstein_problem,
@@ -337,9 +337,9 @@ if ac4_is_arc_consistent:
     print("using ac4 as a preprocessing stage which took", ac4_end_time - ac4_start_time, "seconds")
     print("-" * 145)
     measure_performance(1, "ac4_einstein_problem", ac4_einstein_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "ac4_einstein_problem", ac4_einstein_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "ac4_einstein_problem", ac4_einstein_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac4_einstein_problem", ac4_einstein_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "ac4_einstein_problem", ac4_einstein_problem,
@@ -371,9 +371,9 @@ if pc2_is_path_consistent:
     measure_performance(1, "pc2_einstein_problem", pc2_einstein_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "pc2_einstein_problem", pc2_einstein_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "pc2_einstein_problem", pc2_einstein_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "pc2_einstein_problem", pc2_einstein_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "pc2_einstein_problem", pc2_einstein_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "pc2_einstein_problem", pc2_einstein_problem,
@@ -406,9 +406,9 @@ if is_two_consistent:
     measure_performance(1, "two_consistency_einstein_problem", two_consistency_einstein_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "two_consistency_einstein_problem", two_consistency_einstein_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "two_consistency_einstein_problem", two_consistency_einstein_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "two_consistency_einstein_problem", two_consistency_einstein_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "two_consistency_einstein_problem", two_consistency_einstein_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "two_consistency_einstein_problem", two_consistency_einstein_problem,

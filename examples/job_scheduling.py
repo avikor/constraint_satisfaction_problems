@@ -98,9 +98,9 @@ car_assembly_problem = csp.ConstraintProblem(constraints)
 
 
 measure_performance(1, "car_assembly_problem", car_assembly_problem,
-                    "heuristic_backtracking_search", inference=None, with_history=True)
-measure_performance(1, "car_assembly_problem", car_assembly_problem,
                     "heuristic_backtracking_search", with_history=True)
+measure_performance(1, "car_assembly_problem", car_assembly_problem,
+                    "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
 measure_performance(2, "car_assembly_problem", car_assembly_problem,
                     "min_conflicts", 100000, with_history=True)
 measure_performance(2, "car_assembly_problem", car_assembly_problem,
@@ -130,9 +130,9 @@ if ac3_is_arc_consistent:
     measure_performance(1, "ac3_car_assembly_problem", ac3_car_assembly_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac3_car_assembly_problem", ac3_car_assembly_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "ac3_car_assembly_problem", ac3_car_assembly_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "ac3_car_assembly_problem", ac3_car_assembly_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac3_car_assembly_problem", ac3_car_assembly_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "ac3_car_assembly_problem", ac3_car_assembly_problem,
@@ -164,9 +164,9 @@ if ac4_is_arc_consistent:
     measure_performance(1, "ac4_car_assembly_problem", ac4_car_assembly_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac4_car_assembly_problem", ac4_car_assembly_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "ac4_car_assembly_problem", ac4_car_assembly_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "ac4_car_assembly_problem", ac4_car_assembly_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check,  with_history=True)
     measure_performance(1, "ac4_car_assembly_problem", ac4_car_assembly_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "ac4_car_assembly_problem", ac4_car_assembly_problem,
@@ -199,9 +199,9 @@ if pc2_is_path_consistent:
     measure_performance(1, "pc2_car_assembly_problem", pc2_car_assembly_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "pc2_car_assembly_problem", pc2_car_assembly_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "pc2_car_assembly_problem", pc2_car_assembly_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "pc2_car_assembly_problem", pc2_car_assembly_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "pc2_car_assembly_problem", pc2_car_assembly_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "pc2_car_assembly_problem", pc2_car_assembly_problem,
@@ -235,9 +235,9 @@ if is_two_consistent:
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     
     measure_performance(1, "two_consistency_car_assembly_problem", two_consistency_car_assembly_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "two_consistency_car_assembly_problem", two_consistency_car_assembly_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "two_consistency_car_assembly_problem", two_consistency_car_assembly_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "two_consistency_car_assembly_problem", two_consistency_car_assembly_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "two_consistency_car_assembly_problem", two_consistency_car_assembly_problem,

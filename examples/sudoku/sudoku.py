@@ -60,10 +60,10 @@ sudoku_successor_generator = SudokuSuccessorGenerator(read_only_names)
 
 
 measure_performance(1, "sudoku_problem", sudoku_problem,
-                    "heuristic_backtracking_search", with_history=True, inference=None,
-                    read_only_variables=read_only_variables)
-measure_performance(1, "sudoku_problem", sudoku_problem,
                     "heuristic_backtracking_search", with_history=True, read_only_variables=read_only_variables)
+measure_performance(1, "sudoku_problem", sudoku_problem,
+                    "heuristic_backtracking_search", inference=csp.forward_check, with_history=True,
+                    read_only_variables=read_only_variables)
 measure_performance(1, "sudoku_problem", sudoku_problem,
                     "naive_cycle_cutset", with_history=True, read_only_variables=read_only_variables)
 measure_performance(2, "sudoku_problem", sudoku_problem,
@@ -99,10 +99,11 @@ if ac3_is_arc_consistent:
                         "backtracking_search", inference=csp.forward_check, with_history=True,
                         read_only_variables=read_only_variables)
     measure_performance(1, "ac3_sudoku_problem", ac3_sudoku_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True,
+                        "heuristic_backtracking_search", with_history=True,
                         read_only_variables=read_only_variables)
     measure_performance(1, "ac3_sudoku_problem", ac3_sudoku_problem,
-                        "heuristic_backtracking_search", with_history=True, read_only_variables=read_only_variables)
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True,
+                        read_only_variables=read_only_variables)
     measure_performance(1, "ac3_sudoku_problem", ac3_sudoku_problem,
                         "naive_cycle_cutset", with_history=True, read_only_variables=read_only_variables)
     measure_performance(2, "ac3_sudoku_problem", ac3_sudoku_problem,
@@ -124,10 +125,10 @@ if ac4_is_arc_consistent:
     print("using ac4 as a preprocessing stage which took", ac4_end_time - ac4_start_time, "seconds")
     print("-" * 145)
     measure_performance(1, "ac4_sudoku_problem", ac4_sudoku_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True,
-                        read_only_variables=read_only_variables)
-    measure_performance(1, "ac4_sudoku_problem", ac4_sudoku_problem,
                         "heuristic_backtracking_search", with_history=True, read_only_variables=read_only_variables)
+    measure_performance(1, "ac4_sudoku_problem", ac4_sudoku_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True,
+                        read_only_variables=read_only_variables)
     measure_performance(1, "ac4_sudoku_problem", ac4_sudoku_problem,
                         "naive_cycle_cutset", with_history=True, read_only_variables=read_only_variables)
     measure_performance(2, "ac4_sudoku_problem", ac4_sudoku_problem,
@@ -154,10 +155,10 @@ if pc2_is_path_consistent:
                         "backtracking_search", inference=csp.forward_check, with_history=True,
                         read_only_variables=read_only_variables)
     measure_performance(1, "pc2_sudoku_problem", pc2_sudoku_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True,
-                        read_only_variables=read_only_variables)
-    measure_performance(1, "pc2_sudoku_problem", pc2_sudoku_problem,
                         "heuristic_backtracking_search", with_history=True, read_only_variables=read_only_variables)
+    measure_performance(1, "pc2_sudoku_problem", pc2_sudoku_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True,
+                        read_only_variables=read_only_variables)
     measure_performance(1, "pc2_sudoku_problem", pc2_sudoku_problem,
                         "naive_cycle_cutset", with_history=True, read_only_variables=read_only_variables)
     measure_performance(2, "pc2_sudoku_problem", pc2_sudoku_problem,

@@ -51,9 +51,9 @@ measure_performance(1, "map_coloring_problem", map_coloring_problem,
 measure_performance(1, "map_coloring_problem", map_coloring_problem,
                     "backtracking_search", inference=csp.forward_check, with_history=True)
 measure_performance(1, "map_coloring_problem", map_coloring_problem,
-                    "heuristic_backtracking_search", inference=None, with_history=True)
-measure_performance(1, "map_coloring_problem", map_coloring_problem,
                     "heuristic_backtracking_search", with_history=True)
+measure_performance(1, "map_coloring_problem", map_coloring_problem,
+                    "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
 measure_performance(1, "map_coloring_problem", map_coloring_problem,
                     "naive_cycle_cutset", with_history=True)
 measure_performance(2, "map_coloring_problem", map_coloring_problem,
@@ -85,9 +85,9 @@ if ac3_is_arc_consistent:
     measure_performance(1, "ac3_map_coloring_problem", ac3_map_coloring_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac3_map_coloring_problem", ac3_map_coloring_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "ac3_map_coloring_problem", ac3_map_coloring_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "ac3_map_coloring_problem", ac3_map_coloring_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac3_map_coloring_problem", ac3_map_coloring_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "ac3_map_coloring_problem", ac3_map_coloring_problem,
@@ -119,9 +119,9 @@ if ac4_is_arc_consistent:
     measure_performance(1, "ac4_map_coloring_problem", ac4_map_coloring_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac4_map_coloring_problem", ac4_map_coloring_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "ac4_map_coloring_problem", ac4_map_coloring_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "ac4_map_coloring_problem", ac4_map_coloring_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac4_map_coloring_problem", ac4_map_coloring_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "ac4_map_coloring_problem", ac4_map_coloring_problem,
@@ -153,9 +153,9 @@ if pc2_is_path_consistent:
     measure_performance(1, "pc2_map_coloring_problem", pc2_map_coloring_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "pc2_map_coloring_problem", pc2_map_coloring_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "pc2_map_coloring_problem", pc2_map_coloring_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "pc2_map_coloring_problem", pc2_map_coloring_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "pc2_map_coloring_problem", pc2_map_coloring_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "pc2_map_coloring_problem", pc2_map_coloring_problem,
@@ -188,9 +188,9 @@ if is_two_consistent:
     measure_performance(1, "two_consistency_map_coloring_problem", two_consistency_map_coloring_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "two_consistency_map_coloring_problem", two_consistency_map_coloring_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "two_consistency_map_coloring_problem", two_consistency_map_coloring_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "two_consistency_map_coloring_problem", two_consistency_map_coloring_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "two_consistency_map_coloring_problem", two_consistency_map_coloring_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "two_consistency_map_coloring_problem", two_consistency_map_coloring_problem,

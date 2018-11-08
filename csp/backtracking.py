@@ -36,13 +36,16 @@ def __backtrack(constraint_problem: ConstraintProblem, inference: Optional[Infer
         selected_variable.assign(value)
         if with_history:
             __actions_history.append((selected_variable, value))
+
         if inference is not None and not inference(constraint_problem, selected_variable):
             selected_variable.unassign()
             if with_history:
                 __actions_history.append((selected_variable, None))
             return False
+
         if __backtrack(constraint_problem, inference, with_history):
             return True
+
         selected_variable.unassign()
         if with_history:
             __actions_history.append((selected_variable, None))
@@ -55,7 +58,7 @@ def heuristic_backtracking_search(constraint_problem: ConstraintProblem,
                                   secondary_select_unassigned_vars: Optional[SelectUnassignedVariables] =
                                   degree_heuristic,
                                   sort_domain: SortDomain = least_constraining_value,
-                                  inference: Optional[Inference] = forward_check,
+                                  inference: Optional[Inference] = None,
                                   with_history: bool = False) -> Optional[Deque[Tuple[Variable, Any]]]:
     __actions_history.clear()
     __heuristic_backtrack(constraint_problem, primary_select_unassigned_vars,
@@ -79,21 +82,26 @@ def __heuristic_backtrack(constraint_problem: ConstraintProblem,
     if secondary_select_unassigned_vars is not None and len(selected_unassigned_vars) > 1:
         selected_unassigned_vars = secondary_select_unassigned_vars(constraint_problem, selected_unassigned_vars)
     selected_variable, *_ = selected_unassigned_vars
+
     sorted_domain = sort_domain(constraint_problem, selected_variable)
     for value in sorted_domain:
         selected_variable.assign(value)
         if with_history:
             __actions_history.append((selected_variable, value))
+
         if inference is not None and not inference(constraint_problem, selected_variable):
             selected_variable.unassign()
             if with_history:
                 __actions_history.append((selected_variable, None))
             return False
+
         if __heuristic_backtrack(constraint_problem, primary_select_unassigned_vars,
                                  secondary_select_unassigned_vars, sort_domain, inference, with_history):
             return True
+
         selected_variable.unassign()
         if with_history:
             __actions_history.append((selected_variable, None))
+
     return False
 

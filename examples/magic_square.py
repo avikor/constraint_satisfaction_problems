@@ -62,9 +62,9 @@ measure_performance(1, "magic_square_problem", magic_square_problem,
 measure_performance(1, "magic_square_problem", magic_square_problem,
                     "backtracking_search", inference=csp.forward_check, with_history=True)
 measure_performance(1, "magic_square_problem", magic_square_problem,
-                    "heuristic_backtracking_search", inference=None, with_history=True)
-measure_performance(1, "magic_square_problem", magic_square_problem,
                     "heuristic_backtracking_search", with_history=True)
+measure_performance(1, "magic_square_problem", magic_square_problem,
+                    "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
 measure_performance(1, "magic_square_problem", magic_square_problem,
                     "naive_cycle_cutset", with_history=True)
 measure_performance(2, "magic_square_problem", magic_square_problem,
@@ -96,9 +96,9 @@ if ac3_is_arc_consistent:
     measure_performance(1, "ac3_magic_square_problem", ac3_magic_square_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac3_magic_square_problem", ac3_magic_square_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "ac3_magic_square_problem", ac3_magic_square_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "ac3_magic_square_problem", ac3_magic_square_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac3_magic_square_problem", ac3_magic_square_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "ac3_magic_square_problem", ac3_magic_square_problem,
@@ -129,9 +129,9 @@ if ac4_is_arc_consistent:
     measure_performance(1, "ac4_magic_square_problem", ac4_magic_square_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac4_magic_square_problem", ac4_magic_square_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "ac4_magic_square_problem", ac4_magic_square_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "ac4_magic_square_problem", ac4_magic_square_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "ac4_magic_square_problem", ac4_magic_square_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "ac4_magic_square_problem", ac4_magic_square_problem,
@@ -162,9 +162,9 @@ if pc2_is_path_consistent:
     measure_performance(1, "pc2_magic_square_problem", pc2_magic_square_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "pc2_magic_square_problem", pc2_magic_square_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "pc2_magic_square_problem", pc2_magic_square_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "pc2_magic_square_problem", pc2_magic_square_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "pc2_magic_square_problem", pc2_magic_square_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "pc2_magic_square_problem", pc2_magic_square_problem,
@@ -196,9 +196,9 @@ if is_two_consistent:
     measure_performance(1, "two_consistency_magic_square_problem", two_consistency_magic_square_problem,
                         "backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "two_consistency_magic_square_problem", two_consistency_magic_square_problem,
-                        "heuristic_backtracking_search", inference=None, with_history=True)
-    measure_performance(1, "two_consistency_magic_square_problem", two_consistency_magic_square_problem,
                         "heuristic_backtracking_search", with_history=True)
+    measure_performance(1, "two_consistency_magic_square_problem", two_consistency_magic_square_problem,
+                        "heuristic_backtracking_search", inference=csp.forward_check, with_history=True)
     measure_performance(1, "two_consistency_magic_square_problem", two_consistency_magic_square_problem,
                         "naive_cycle_cutset", with_history=True)
     measure_performance(2, "two_consistency_magic_square_problem", two_consistency_magic_square_problem,

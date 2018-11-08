@@ -46,9 +46,7 @@ def measure_performance(tests_amount: int, problem_name: str, problem, constrain
             unsatisfied_constraints_amounts.append(len(solution.get_unsatisfied_constraints()))
 
     print("#" * 145)
-    if constraint_solver == "backtracking_search" and "inference" in kwargs:
-        constraint_solver += "_with_forward_checking"
-    if constraint_solver == "heuristic_backtracking_search" and "inference" not in kwargs:
+    if constraint_solver in ["backtracking_search", "heuristic_backtracking_search"] and "inference" in kwargs:
         constraint_solver += "_with_forward_checking"
     print("displaying performance results of solver: '", constraint_solver, "' with problem: '", problem_name, "'",
           sep='')
