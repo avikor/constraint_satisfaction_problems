@@ -4,7 +4,6 @@ from csp.variable import Variable
 from csp.constraint_problem import ConstraintProblem
 from csp.domain_sorters import least_constraining_value
 from csp.unassigned_variable_selectors import minimum_remaining_values, degree_heuristic
-from csp.forward_checking_implementation import forward_check
 
 
 SelectUnassignedVariables = Callable[[ConstraintProblem, Optional[FrozenSet[Variable]]], FrozenSet[Variable]]
@@ -71,7 +70,7 @@ def __heuristic_backtrack(constraint_problem: ConstraintProblem,
                           primary_select_unassigned_vars: SelectUnassignedVariables = minimum_remaining_values,
                           secondary_select_unassigned_vars: SelectUnassignedVariables = degree_heuristic,
                           sort_domain: SortDomain = least_constraining_value,
-                          inference: Optional[Inference] = forward_check,
+                          inference: Optional[Inference] = None,
                           with_history: bool = False) -> bool:
     if constraint_problem.is_completely_assigned():
         if constraint_problem.is_consistently_assigned():
