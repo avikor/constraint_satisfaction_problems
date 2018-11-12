@@ -1,3 +1,5 @@
+|Build Status| |Code Health| |Code Coverage|
+
 ## Basic Definitions
 A _Constraint Satisfaction Problem (CSP)_ is a triplet _(X, D, C)_ where _X_ is a set of variables X<sub>1</sub>, ...,X<sub>n</sub>.  
 _D_ is a set of domains D<sub>1</sub>, ...,D<sub>n</sub>, where each variable X<sub>i</sub> is assigned with values from domain D<sub>i</sub>.  
@@ -125,7 +127,7 @@ for name in name_to_variable_map.keys():
 # 8 : 9  
 # 9 : 2  
 
-# for finding all solutions use:
+# to find all solutions use:
 # for solution_assignment in csp.heuristic_backtracking_search(magic_square_problem, find_all_solutions=True):
 #     for name in name_to_variable_map:
 #         print(name, ":", name_to_variable_map[name].value)
