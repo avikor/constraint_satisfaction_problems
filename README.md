@@ -1,5 +1,3 @@
-|Build Status| |Code Health| |Code Coverage|
-
 ## Basic Definitions
 A _Constraint Satisfaction Problem (CSP)_ is a triplet _(X, D, C)_ where _X_ is a set of variables X<sub>1</sub>, ...,X<sub>n</sub>.  
 _D_ is a set of domains D<sub>1</sub>, ...,D<sub>n</sub>, where each variable X<sub>i</sub> is assigned with values from domain D<sub>i</sub>.  
