@@ -145,49 +145,50 @@ Constraints:
 3. The queens don't attack each other diagonally.
 
 Code implementation:
-   
-    import csp
-    
-    n = 8
-    name_to_variable_map = {col: csp.Variable(range(n)) for col in range(n)}
-    
-    
-    def get_not_attacking_constraint(columns_difference: int) -> csp.ConstraintEvaluator:
-        def not_attacking_constraint(values: tuple) -> bool:
-            if len(values) < 2:
-                return True
-            row1, row2 = values
-            return row1 != row2 and abs(row1 - row2) != columns_difference
-        return not_attacking_constraint
-    
-    
-    not_attacking_constraints = dict()
-    for i in range(1, n):
-        not_attacking_constraints[i] = get_not_attacking_constraint(i)
-    
-    
-    constraints = set()
-    for col1 in range(n):
-        for col2 in range(n):
-            if col1 < col2:
-                constraints.add(csp.Constraint((name_to_variable_map[col1], name_to_variable_map[col2]),
-                                               not_attacking_constraints[abs(col1 - col2)]))
-    
-    n_queens_problem = csp.ConstraintProblem(constraints)
-    csp.min_conflicts(n_queens_problem, 1000)
-    if n_queens_problem.is_completely_consistently_assigned():
-        for name in name_to_variable_map:
-            print(name, ":", name_to_variable_map[name].value)
-    
-        >>> 0 : 4
-        >>> 1 : 6
-        >>> 2 : 0
-        >>> 3 : 3
-        >>> 4 : 1
-        >>> 5 : 7
-        >>> 6 : 5
-        >>> 7 : 2
+```python
+import csp
 
+n = 8
+name_to_variable_map = {col: csp.Variable(range(n)) for col in range(n)}
+
+
+def get_not_attacking_constraint(columns_difference: int) -> csp.ConstraintEvaluator:
+    def not_attacking_constraint(values: tuple) -> bool:
+        if len(values) < 2:
+            return True
+        row1, row2 = values
+        return row1 != row2 and abs(row1 - row2) != columns_difference
+    return not_attacking_constraint
+
+
+not_attacking_constraints = dict()
+for i in range(1, n):
+    not_attacking_constraints[i] = get_not_attacking_constraint(i)
+
+
+constraints = set()
+for col1 in range(n):
+    for col2 in range(n):
+        if col1 < col2:
+            constraints.add(csp.Constraint((name_to_variable_map[col1], name_to_variable_map[col2]),
+                                           not_attacking_constraints[abs(col1 - col2)]))
+
+n_queens_problem = csp.ConstraintProblem(constraints)
+csp.min_conflicts(n_queens_problem, 1000)
+if n_queens_problem.is_completely_consistently_assigned():
+    for name in name_to_variable_map:
+        print(name, ":", name_to_variable_map[name].value)
+
+# RESULTS:
+# 0 : 4
+# 1 : 6
+# 2 : 0
+# 3 : 3
+# 4 : 1
+# 5 : 7
+# 6 : 5
+# 7 : 2
+```
 Alternatively, one could use any other algorithm implemented in the package (constraint weighting, simulated annealing,  
 naive cycle cutset etc. see full list down below).
 <br></br>
