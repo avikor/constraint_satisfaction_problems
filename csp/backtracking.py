@@ -144,8 +144,7 @@ def forward_checking_backtracking_search(constraint_problem: ConstraintProblem, 
     """ Optimized backtracking with forward checking. Instead of implementing forward checking as an Inference,
         It is written here directly.
         Advantage: saves the need to make a function call for forward checking, thus increasing performance.
-        Disadvantage: violates DRY, makes the code less modular which might proof harder to maintain.
-        - After several tries I've found this little optimization doesn't make forward checking that much faster... """
+        Disadvantage: violates DRY, makes the code less modular which might proof harder to maintain. """
 
     __actions_history.clear()
     if find_all_solutions and with_history:
@@ -210,9 +209,7 @@ def optimized_heuristic_backtracking_search(constraint_problem: ConstraintProble
         Advantage: saves the need to make function calls, thus increasing performance.
         Disadvantage: makes the code less modular which might proof harder to maintain, doesn't allow users to
                       implement their own heuristics, or change the order of existing heuristics.
-                      Does not allow for inferences.
-        - After several tries I've found this optimization does not increase performance by a big enough factor to
-          justify its use. """
+                      Does not allow for inferences. """
     __actions_history.clear()
     if find_all_solutions and with_history:
         with_history = False
