@@ -29,7 +29,7 @@ z = csp.Variable(range(1, 21))
 pythagorean_triple_constraint = csp.Constraint((x, y, z), lambda values: values[0] ** 2 + values[1] ** 2 ==
                                                                          values[2] ** 2 if len(values) == 3 else True)
 total_order_constraint = csp.Constraint((x, y, z), lambda values: values[0] < values[1] < values[2]
-                                                         if len(values) == 3 else True)
+                                                                  if len(values) == 3 else True)
 pythagorean_triples_problem = csp.ConstraintProblem((pythagorean_triple_constraint, total_order_constraint))
 for solution_assignment in csp.heuristic_backtracking_search(pythagorean_triples_problem, find_all_solutions=True):
     print("x:", x.value)
