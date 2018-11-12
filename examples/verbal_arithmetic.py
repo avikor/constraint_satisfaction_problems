@@ -80,19 +80,92 @@ verbal_arithmetic_problem = csp.ConstraintProblem((all_diff_const, units_digit_c
 
 
 # /////////////////////////////////////////////// USAGE EXAMPLE ///////////////////////////////////////////////
-# csp.heuristic_backtracking_search(verbal_arithmetic_problem)
-# for name in name_to_variable_map:
-#    print(name, ":", name_to_variable_map[name].value)
+# solutions_count = 0
+# for solution_assignment in csp.heuristic_backtracking_search(verbal_arithmetic_problem, find_all_solutions=True):
+#     solutions_count += 1
+#     print("t :", name_to_variable_map["t"].value)
+#     print("w :", name_to_variable_map["w"].value)
+#     print("o :", name_to_variable_map["o"].value)
+#     print("f :", name_to_variable_map["f"].value)
+#     print("u :", name_to_variable_map["u"].value)
+#     print("r :", name_to_variable_map["r"].value)
+#     print("c_10 :", name_to_variable_map["c_10"].value)
+#     print("c_100 :", name_to_variable_map["c_100"].value)
+#     print("c_1000 :", name_to_variable_map["c_1000"].value)
+#     print()
+# print("solutions_count:", solutions_count)
 #
+# t : 7
+# w : 3
 # o : 4
+# f : 1
 # u : 6
 # r : 8
-# c_100 : 0
-# w : 3
-# t : 7
 # c_10 : 0
+# c_100 : 0
 # c_1000 : 1
+#
+# t : 8
+# w : 3
+# o : 6
 # f : 1
+# u : 7
+# r : 2
+# c_10 : 1
+# c_100 : 0
+# c_1000 : 1
+#
+# t : 8
+# w : 4
+# o : 6
+# f : 1
+# u : 9
+# r : 2
+# c_10 : 1
+# c_100 : 0
+# c_1000 : 1
+#
+# t : 9
+# w : 2
+# o : 8
+# f : 1
+# u : 5
+# r : 6
+# c_10 : 1
+# c_100 : 0
+# c_1000 : 1
+#
+# t : 9
+# w : 3
+# o : 8
+# f : 1
+# u : 7
+# r : 6
+# c_10 : 1
+# c_100 : 0
+# c_1000 : 1
+#
+# t : 7
+# w : 6
+# o : 5
+# f : 1
+# u : 3
+# r : 0
+# c_10 : 1
+# c_100 : 1
+# c_1000 : 1
+#
+# t : 8
+# w : 6
+# o : 7
+# f : 1
+# u : 3
+# r : 4
+# c_10 : 1
+# c_100 : 1
+# c_1000 : 1
+#
+# solutions_count: 7
 # /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

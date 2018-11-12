@@ -11,7 +11,58 @@ A **constraint graph** (could be a hypergraph) is a graph in which the nodes cor
 and the edges correspond to constraints, i.e. V = X and E = C.
 <br></br>
 
-## Example #1: Magic Square
+## Example #1: Pythagorean Triples
+Problem: find all triples (x, y, z) such that x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup> and x < y < z and max{x, y, z} &lt; 21.  
+Variables: x, y, z &isin; {1, 2, 3, ..., 20}  
+Domains: each variable's domain is (1, 2, 3, ..., 20)  
+Constraints: 
+1. x<sup>2</sup> + y<sup>2</sup> == z<sup>2</sup>
+2. x < y < z
+
+Code implementation:
+```python
+import csp
+
+x = csp.Variable(range(1, 21))
+y = csp.Variable(range(1, 21))
+z = csp.Variable(range(1, 21))
+pythagorean_triple_constraint = csp.Constraint((x, y, z), lambda values: values[0] ** 2 + values[1] ** 2 ==
+                                                                         values[2] ** 2 if len(values) == 3 else True)
+total_order_constraint = csp.Constraint((x, y, z), lambda values: values[0] < values[1] < values[2]
+                                                         if len(values) == 3 else True)
+pythagorean_triples_problem = csp.ConstraintProblem((pythagorean_triple_constraint, total_order_constraint))
+for solution_assignment in csp.heuristic_backtracking_search(pythagorean_triples_problem, find_all_solutions=True):
+    print("x:", x.value)
+    print("y:", y.value)
+    print("z:", z.value)
+    print()
+
+# RESULTS:
+# x: 3
+# y: 4
+# z: 5
+
+# x: 5
+# y: 12
+# z: 13
+
+# x: 6
+# y: 8
+# z: 10
+
+# x: 8
+# y: 15
+# z: 17
+
+# x: 9
+# y: 12
+# z: 15
+
+# x: 12
+# y: 16
+# z: 20
+```
+## Example #2: Magic Square
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e4/Magicsquareexample.svg)  
 
 Problem: fill up an n x n square with distinct positive integers in the range 1, ..., n x n such that each cell  
@@ -27,53 +78,61 @@ Constraints:
 4. The values of both diagonals sum up to **magic sum**.
 
 Code implementation:
+```python
+import csp
+  
+n = 3  
+order = n**2  
+magic_sum = n * int((order + 1) / 2)  
+name_to_variable_map = {square: csp.Variable(range(1, order + 1)) for square in range(1, order + 1)}  
 
-    import csp
-      
-    n = 3  
-    order = n**2  
-    magic_sum = n * int((order + 1) / 2)  
-    name_to_variable_map = {square: csp.Variable(range(1, order + 1)) for square in range(1, order + 1)}  
-    
-    constraints = set()
-    
-    # each variable must have a unique value  
-    constraints.add(csp.Constraint(name_to_variable_map.values(), csp.all_different))  
-    
-    exact_length_magic_sum = csp.ExactLengthExactSum(n, magic_sum)  
-    
-    # row constraints
-    for row in range(1, order + 1, n):  
-        constraints.add(csp.Constraint((name_to_variable_map[i] for i in range(row, row + n)),  
-                                       exact_length_magic_sum))  
-    
-    # column constraints
-    for column in range(1, n + 1):  
-        constraints.add(csp.Constraint((name_to_variable_map[i] for i in range(column, order + 1, n)),  
-                                       exact_length_magic_sum))  
-    
-    # diagonals constraints
-    constraints.add(csp.Constraint((name_to_variable_map[diag] for diag in range(1, order + 1, n + 1)), 
-                                   exact_length_magic_sum))  
-    constraints.add(csp.Constraint((name_to_variable_map[diag] for diag in range(n, order, n - 1)), 
-                                   exact_length_magic_sum))  
-    
-    magic_square_problem = csp.ConstraintProblem(constraints)  
-    csp.heuristic_backtracking_search(magic_square_problem)  
-    for name in name_to_variable_map.keys():  
-        print(name, ":", name_to_variable_map[name].value)  
-    
-    >>> 1 : 8  
-    >>> 2 : 1  
-    >>> 3 : 6  
-    >>> 4 : 3  
-    >>> 5 : 5  
-    >>> 6 : 7  
-    >>> 7 : 4  
-    >>> 8 : 9  
-    >>> 9 : 2  
+constraints = set()
 
-## Example #2: n-Queens
+# each variable must have a unique value  
+constraints.add(csp.Constraint(name_to_variable_map.values(), csp.all_different))  
+
+exact_length_magic_sum = csp.ExactLengthExactSum(n, magic_sum)  
+
+# row constraints
+for row in range(1, order + 1, n):  
+    constraints.add(csp.Constraint((name_to_variable_map[i] for i in range(row, row + n)),  
+                                   exact_length_magic_sum))  
+
+# column constraints
+for column in range(1, n + 1):  
+    constraints.add(csp.Constraint((name_to_variable_map[i] for i in range(column, order + 1, n)),  
+                                   exact_length_magic_sum))  
+
+# diagonals constraints
+constraints.add(csp.Constraint((name_to_variable_map[diag] for diag in range(1, order + 1, n + 1)), 
+                               exact_length_magic_sum))  
+constraints.add(csp.Constraint((name_to_variable_map[diag] for diag in range(n, order, n - 1)), 
+                               exact_length_magic_sum))  
+
+magic_square_problem = csp.ConstraintProblem(constraints)  
+csp.heuristic_backtracking_search(magic_square_problem)  
+for name in name_to_variable_map.keys():  
+    print(name, ":", name_to_variable_map[name].value)  
+
+# RESULTS:
+# 1 : 8  
+# 2 : 1  
+# 3 : 6  
+# 4 : 3  
+# 5 : 5  
+# 6 : 7  
+# 7 : 4  
+# 8 : 9  
+# 9 : 2  
+
+# for finding all solutions use:
+# for solution_assignment in csp.heuristic_backtracking_search(magic_square_problem, find_all_solutions=True):
+#     for name in name_to_variable_map:
+#         print(name, ":", name_to_variable_map[name].value)
+#     print()
+# see 'magic_square.py' under 'examples' directory for results.
+```
+## Example #3: n-Queens
 ![](https://i.imgur.com/Ujq4LzZ.png)
 
 Problem: place n queens on an n x n chessboard so that no two queens threaten each other.

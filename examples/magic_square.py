@@ -41,9 +41,43 @@ magic_square_problem = csp.ConstraintProblem(constraints)
 
 
 # /////////////////////////////////////////////// USAGE EXAMPLE ///////////////////////////////////////////////
-# csp.heuristic_backtracking_search(magic_square_problem)
-# for name in name_to_variable_map:
-#    print(name, ":", name_to_variable_map[name].value)
+# solutions_count = 0
+# for solution_assignment in csp.heuristic_backtracking_search(magic_square_problem, find_all_solutions=True):
+#     solutions_count += 1
+#     for name in name_to_variable_map:
+#         print(name, ":", name_to_variable_map[name].value)
+#     print()
+# print("solutions_count:", solutions_count)
+#
+# 1 : 4
+# 2 : 9
+# 3 : 2
+# 4 : 3
+# 5 : 5
+# 6 : 7
+# 7 : 8
+# 8 : 1
+# 9 : 6
+#
+# 1 : 2
+# 2 : 9
+# 3 : 4
+# 4 : 7
+# 5 : 5
+# 6 : 3
+# 7 : 6
+# 8 : 1
+# 9 : 8
+#
+# 1 : 6
+# 2 : 7
+# 3 : 2
+# 4 : 1
+# 5 : 5
+# 6 : 9
+# 7 : 8
+# 8 : 3
+# 9 : 4
 #
 # 1 : 2
 # 2 : 7
@@ -54,6 +88,48 @@ magic_square_problem = csp.ConstraintProblem(constraints)
 # 7 : 4
 # 8 : 3
 # 9 : 8
+#
+# 1 : 8
+# 2 : 3
+# 3 : 4
+# 4 : 1
+# 5 : 5
+# 6 : 9
+# 7 : 6
+# 8 : 7
+# 9 : 2
+#
+# 1 : 4
+# 2 : 3
+# 3 : 8
+# 4 : 9
+# 5 : 5
+# 6 : 1
+# 7 : 2
+# 8 : 7
+# 9 : 6
+#
+# 1 : 8
+# 2 : 1
+# 3 : 6
+# 4 : 3
+# 5 : 5
+# 6 : 7
+# 7 : 4
+# 8 : 9
+# 9 : 2
+#
+# 1 : 6
+# 2 : 1
+# 3 : 8
+# 4 : 7
+# 5 : 5
+# 6 : 3
+# 7 : 2
+# 8 : 9
+# 9 : 4
+#
+# solutions_count: 8
 # /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
