@@ -15,13 +15,14 @@ and the edges correspond to constraints, i.e. V = X and E = C.
 <br></br>
 
 ## Example #1: Pythagorean Triples
-<img src="https://freedocs.mi.hdm-stuttgart.de/Sd1/Ref/Statements/phythagorean.svg" width="200" height="200" />
+<img src="https://freedocs.mi.hdm-stuttgart.de/Sd1/Ref/Statements/phythagorean.svg" width=200 height=200/>
+  
 Problem: find all triples (x, y, z) such that x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup> and x < y < z and max{x, y, z} &lt; 21.  
 Variables: x, y, z &isin; {1, 2, 3, ..., 20}  
 Domains: each variable's domain is (1, 2, 3, ..., 20)  
 Constraints:  
-1. x<sup>2</sup> + y<sup>2</sup> == z<sup>2</sup>
-2. x < y < z
+1. x<sup>2</sup> + y<sup>2</sup> == z<sup>2</sup>  
+2. x < y < z  
 Code implementation:
 
 ```python
