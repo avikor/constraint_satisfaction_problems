@@ -6,6 +6,6 @@ install:
   - pip install codecov
   - pip install .
 script:
-  - python -m unittest
+  - python -m unittest discover <tests>
 after_success:
   - codecov
