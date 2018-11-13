@@ -2,7 +2,6 @@
 [![Build Status](https://travis-ci.org/avikor/constraint_satisfaction_problems.svg?branch=master)](https://travis-ci.org/avikor/constraint_satisfaction_problems)
 [![Code Coverage](https://img.shields.io/badge/coverage-85%25-yellowgreen.svg)](https://codecov.io/gh/avikor/constraint_satisfaction_problems)
 [![Code Quality](https://img.shields.io/badge/code%20quality-B-green.svg)](https://app.codacy.com/project/avikor/constraint_satisfaction_problems/dashboard)
-[![maintainability](https://img.shields.io/badge/maintainability-D-orange.svg)](https://codeclimate.com/github/avikor/constraint_satisfaction_problems)
 
 ## Basic Definitions
 A _Constraint Satisfaction Problem (CSP)_ is a triplet _(X, D, C)_ where _X_ is a set of variables X<sub>1</sub>, ...,X<sub>n</sub>.  
