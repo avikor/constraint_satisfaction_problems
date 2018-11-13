@@ -23,6 +23,7 @@ Constraints:
 1. x<sup>2</sup> + y<sup>2</sup> == z<sup>2</sup>
 2. x < y < z
 Code implementation:
+
 ```python
 import csp
 
