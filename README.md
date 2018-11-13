@@ -1,5 +1,6 @@
-[![Python 3.6](https://img.shields.io/badge/python-3.5%2B-brightgreen.svg)](https://www.python.org/downloads/release/python-360/)
+[![Python 3.6](https://img.shields.io/badge/python-3.5%2B-brightgreen.svg)](https://www.python.org/downloads/release/python-350/)
 [![Build Status](https://travis-ci.org/avikor/constraint_satisfaction_problems.svg?branch=master)](https://travis-ci.org/avikor/constraint_satisfaction_problems)
+[![Code Coverage](https://img.shields.io/badge/coverage-85%25-yellowgreen.svg)](https://codecov.io/gh/avikor/constraint_satisfaction_problems)
 
 ## Basic Definitions
 A _Constraint Satisfaction Problem (CSP)_ is a triplet _(X, D, C)_ where _X_ is a set of variables X<sub>1</sub>, ...,X<sub>n</sub>.  
