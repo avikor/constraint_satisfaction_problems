@@ -1,4 +1,6 @@
+[![Python 3.6](https://img.shields.io/badge/python-3.5.6%2B-brightgreen.svg)](https://www.python.org/downloads/release/python-360/)
 [![Build Status](https://travis-ci.org/avikor/constraint_satisfaction_problems.svg?branch=master)](https://travis-ci.org/avikor/constraint_satisfaction_problems)
+
 ## Basic Definitions
 A _Constraint Satisfaction Problem (CSP)_ is a triplet _(X, D, C)_ where _X_ is a set of variables X<sub>1</sub>, ...,X<sub>n</sub>.  
 _D_ is a set of domains D<sub>1</sub>, ...,D<sub>n</sub>, where each variable X<sub>i</sub> is assigned with values from domain D<sub>i</sub>.  
