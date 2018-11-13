@@ -3,4 +3,4 @@ python:
   - "3.6"
 install: true
 script:
-  - pytest
+  - pytest tests/
