@@ -3,7 +3,7 @@ python:
   - "3.5"
   - "3.6"
 install:
-  - pip instal codecov
+  - pip install codecov
   - pip install .
 script:
   - python -m unittest
