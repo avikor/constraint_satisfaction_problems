@@ -73,7 +73,7 @@ for solution_assignment in csp.heuristic_backtracking_search(pythagorean_triples
 ## Example #2: Magic Square
 ![](https://upload.wikimedia.org/wikipedia/commons/e/e4/Magicsquareexample.svg)  
 
-Problem: fill up an n x n square with distinct positive integers in the range 1, ..., n x n such that each cell  
+Problem: fill up an n x n square with distinct positive integers in the range (1, ..., n x n) such that each cell  
 contains a different integer and the sum of the integers in each row, column, and diagonal is equal.  
 -- Define **magic sum** to be n * ((n * n + 1) / 2).  
 
