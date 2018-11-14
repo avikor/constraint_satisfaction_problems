@@ -1,6 +1,6 @@
 [![Python Versions](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue.svg)](https://www.python.org/downloads/release/python-350/)
 [![Build Status](https://travis-ci.org/avikor/constraint_satisfaction_problems.svg?branch=master)](https://travis-ci.org/avikor/constraint_satisfaction_problems)
-[![Code Coverage](https://img.shields.io/badge/coverage-85%25-yellowgreen.svg)](https://codecov.io/gh/avikor/constraint_satisfaction_problems)
+[![Code Coverage](https://img.shields.io/badge/coverage-83%25-yellowgreen.svg)](https://codecov.io/gh/avikor/constraint_satisfaction_problems)
 [![Code Quality](https://img.shields.io/badge/code%20quality-B-green.svg)](https://app.codacy.com/project/avikor/constraint_satisfaction_problems/dashboard)
 
 ## Basic Definitions
