@@ -1,4 +1,5 @@
-[![Python 3.6](https://img.shields.io/badge/python-3.5%2B-brightgreen.svg)](https://www.python.org/downloads/release/python-350/)
+[![Python 3.5](https://img.shields.io/badge/python-3.5-brightgreen.svg)](https://www.python.org/downloads/release/python-350/)
+[![Python 3.6](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://www.python.org/downloads/release/python-360/)
 [![Build Status](https://travis-ci.org/avikor/constraint_satisfaction_problems.svg?branch=master)](https://travis-ci.org/avikor/constraint_satisfaction_problems)
 [![Code Coverage](https://img.shields.io/badge/coverage-85%25-yellowgreen.svg)](https://codecov.io/gh/avikor/constraint_satisfaction_problems)
 [![Code Quality](https://img.shields.io/badge/code%20quality-B-green.svg)](https://app.codacy.com/project/avikor/constraint_satisfaction_problems/dashboard)
@@ -79,7 +80,7 @@ contains a different integer and the sum of the integers in each row, column, an
 Variables: squares on the board.  
 Domains: each variable's domain is (1, ..., n x n).   
 Constraints:  
-1. All variables must be have a unique value.
+1. Each variable must be have a unique value.
 2. The values of all rows sum up to **magic sum**.
 3. The values of all columns sum up to **magic sum**.
 4. The values of both diagonals sum up to **magic sum**.
@@ -118,8 +119,8 @@ constraints.add(csp.Constraint((name_to_variable_map[diag] for diag in range(n, 
 
 magic_square_problem = csp.ConstraintProblem(constraints)  
 csp.heuristic_backtracking_search(magic_square_problem)  
-for name in name_to_variable_map.keys():  
-    print(name, ":", name_to_variable_map[name].value)  
+for name, variable in name_to_variable_map.items():  
+    print(name, ":", variable.value)  
 
 # RESULTS:
 # 1 : 8  
@@ -134,8 +135,8 @@ for name in name_to_variable_map.keys():
 
 # to find all solutions use:
 # for solution_assignment in csp.heuristic_backtracking_search(magic_square_problem, find_all_solutions=True):
-#     for name in name_to_variable_map:
-#         print(name, ":", name_to_variable_map[name].value)
+#     for name, variable in name_to_variable_map.items():
+#         print(name, ":", variable.value)
 #     print()
 # see 'magic_square.py' under 'examples' directory for results.
 ```
@@ -147,7 +148,7 @@ Problem: place n queens on an n x n chessboard so that no two queens threaten ea
 Variables: columns of the board.  
 Domain: the row each queen could be placed inside a column, i.e. each variable's domain is (1, ..., n).  
 Constraints:  
-1. No single row hold two queens: all variables are different.
+1. The queens don't attack each other vertically.
 2. The queens don't attack each other horizontally.
 3. The queens don't attack each other diagonally.
 
@@ -183,8 +184,8 @@ for col1 in range(n):
 n_queens_problem = csp.ConstraintProblem(constraints)
 csp.min_conflicts(n_queens_problem, 1000)
 if n_queens_problem.is_completely_consistently_assigned():
-    for name in name_to_variable_map:
-        print(name, ":", name_to_variable_map[name].value)
+    for name, variable in name_to_variable_map.items():  
+        print(name, ":", variable.value)
 
 # RESULTS:
 # 0 : 4
