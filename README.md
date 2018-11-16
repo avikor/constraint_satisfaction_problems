@@ -16,6 +16,30 @@ A **constraint graph** (could be a hypergraph) is a graph in which the nodes cor
 and the edges correspond to constraints, i.e. V = X and E = C.
 <br></br>
 
+## Implemented Algorithms List
+#### Solvers
+1. backtracking search (with or without forward checking). Could be used to find a single solution or all solutions.
+2. heuristic backtracking search: defaults to Minimum Remaining Values for choosing next unassigned variable,  
+with Degree heuristic as tie breaker. Defaults to Least Constraining Value for domain sorting of chosen unassigned variable.  
+Allows users to define, pick and choose custom heuristics. Can be used with or without forward checking.  
+Could be used to find a single solution or all solutions.
+3. min conflicts (with or without tabu search).
+4. constraints weighting.
+5. tree csp solver: an algorithm that can solve tree-structured constraint satisfaction problems.
+6. cycle cutset: a naive cutset conditioning solver. See source code for exhaustive description.
+7. simulated annealing.
+8. random-restart first-choice hill climbing.
+9. genetic local search.
+<br></br>
+
+#### preprocessing
+1. Arc Consistency 3 (AC3). Could be given as an argument to both backtracking algorithms and thus implement  
+Maintaining Arc Consistency (MAC).
+2. Arc Consistency 4 (AC4).
+3. Path Consistency 2 (PC2).
+4. i-consistency.
+<br></br>
+
 ## Example #1: Pythagorean Triples
 <img src="https://freedocs.mi.hdm-stuttgart.de/Sd1/Ref/Statements/phythagorean.svg" width=200 height=200/>
   
@@ -196,39 +220,14 @@ if n_queens_problem.is_completely_consistently_assigned():
 # 6 : 5
 # 7 : 2
 ```
-Alternatively, one could use any other algorithm implemented in the package (constraint weighting, simulated annealing,  
-naive cycle cutset etc. see full list down below).
-<br></br>
-Additional example which can be found in the 'examples' directory are:
+Examples which can be found under the 'examples' directory include:
 1. Graph coloring.
 2. Job scheduling.
-3. Verbal arithmetic
-4. Einstein's five houses riddle.
-5. Sudoku.
-
-
-## Implemented Algorithms List
-#### Solvers
-1. backtracking search (with or without forward checking).
-2. heuristic backtracking search: defaults to Minimum Remaining Values for choosing next unassigned variable,  
-with Degree heuristic as tie breaker. Defaults to Least Constraining Value for domain sorting of chosen unassigned variable.  
-Allows users to define, pick and choose custom heuristics. Can be used with or without forward checking.
-3. min conflicts (with or without tabu search).
-4. constraints weighting.
-5. tree csp solver: an algorithm that can solve tree-structured constraint satisfaction problems.
-6. cycle cutset: a naive cutset conditioning solver. See source code for exhaustive description.
-7. simulated annealing.
-8. random-restart first-choice hill climbing.
-9. genetic local search.
-<br></br>
-
-#### preprocessing
-1. Arc Consistency 3 (AC3). Could be given to both backtracking algorithms and thus implement  
-Maintaining Arc Consistency (MAC).
-2. Arc Consistency 4 (AC4).
-3. Path Consistency 2 (PC2).
-4. i-consistency.
-<br></br>
+3. Verbal arithmetic.
+4. Magic Square.
+5. Einstein's five houses riddle.
+6. n-Queens.
+7. Sudoku.
 
 ## Basic API (unsound and incomplete, made for explanatory purposes ONLY)
 ![](https://i.imgur.com/GjwBr45.png)
