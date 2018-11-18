@@ -123,7 +123,7 @@ constraints = set()
 # each variable must have a unique value  
 constraints.add(csp.Constraint(name_to_variable_map.values(), csp.all_different))  
 
-exact_length_magic_sum = csp.ExactLengthExactSum(n, magic_sum)  
+exact_length_magic_sum = csp.ExactLengthExactSum(n, magic_sum)  # returns True iff n variables sum up to magic_sum  
 
 # row constraints
 for row in range(1, order + 1, n):  
