@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="Avikor",
     author_email="44028161+avikor@users.noreply.github.com",
-    description="A friendly package for solving constraint satisfaction problems with various algorithms.",
+    description="A friendly package for solving constraint satisfaction problems using various algorithms.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/avikor/constraint_satisfaction_problems",
