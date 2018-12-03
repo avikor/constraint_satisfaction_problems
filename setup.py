@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="csp",
     version="0.0.1",
-    author="Avikor",
+    author="avikor",
     author_email="44028161+avikor@users.noreply.github.com",
     description="A friendly package for solving constraint satisfaction problems using various algorithms.",
     long_description=long_description,
