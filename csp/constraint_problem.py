@@ -128,7 +128,7 @@ class ConstraintProblem:
         state = "\n  constraint_problem is completely assigned: " + str(all(self.__variables_to_constraints_map)) + \
                 ". constraint_problem is consistent: " + str(self.is_consistently_assigned()) + \
                 ". constraint_problem is satisfied: " + str(all(self.__constraints)) + ". }\n"
-        return "{ " + "\n  ".join(map(lambda constraint: str(constraint), self.__constraints)) + state
+        return "{ " + "\n  ".join(map(str, self.__constraints)) + state
 
 
 def _build_variables_to_constraints_mapping(constraints: Iterable[Constraint]) \

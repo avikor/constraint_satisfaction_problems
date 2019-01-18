@@ -98,7 +98,7 @@ class Constraint:
         state = "\n  constraint is completely assigned: " + str(all(self.__variables)) + \
                 ". constraint is consistent: " + str(self.is_consistent()) + ". constraint is satisfied: " + \
               str(bool(self)) + ". ]\n"
-        return "[ " + "\n  ".join(map(lambda var: str(var), self.variables)) + state
+        return "[ " + "\n  ".join(map(str, self.variables)) + state
 
 
 class ConstraintError(Exception):
