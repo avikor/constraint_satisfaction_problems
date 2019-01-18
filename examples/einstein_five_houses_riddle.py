@@ -52,11 +52,11 @@ for i in range(1, 6):
     pets_vars[i] = csp.Variable(pets)
 
 constraints = set()
-constraints.add(csp.Constraint(color_vars.values(), csp.all_different))
-constraints.add(csp.Constraint(nationality_vars.values(), csp.all_different))
-constraints.add(csp.Constraint(drink_vars.values(), csp.all_different))
-constraints.add(csp.Constraint(smoke_vars.values(), csp.all_different))
-constraints.add(csp.Constraint(pets_vars.values(), csp.all_different))
+constraints.add(csp.Constraint(color_vars.values(), csp.all_diff_constraint_evaluator))
+constraints.add(csp.Constraint(nationality_vars.values(), csp.all_diff_constraint_evaluator))
+constraints.add(csp.Constraint(drink_vars.values(), csp.all_diff_constraint_evaluator))
+constraints.add(csp.Constraint(smoke_vars.values(), csp.all_diff_constraint_evaluator))
+constraints.add(csp.Constraint(pets_vars.values(), csp.all_diff_constraint_evaluator))
 
 
 def hint_one(values: tuple) -> bool:

@@ -27,17 +27,17 @@ def _constraint_sudoku_problem_from_name_to_var_map(name_to_var_map: Dict[Tuple[
     rows_indices = _get_rows_indices(grid_len)
     for row in rows_indices:
         row_vars = (name_to_var_map[(i, j)] for i, j in name_to_var_map.keys() if (i, j) in row)
-        constraints.add(csp.Constraint(row_vars, csp.all_different))
+        constraints.add(csp.Constraint(row_vars, csp.all_diff_constraint_evaluator))
 
     column_indices = _get_columns_indices(grid_len)
     for column in column_indices:
         column_vars = (name_to_var_map[(i, j)] for i, j in name_to_var_map.keys() if (i, j) in column)
-        constraints.add(csp.Constraint(column_vars, csp.all_different))
+        constraints.add(csp.Constraint(column_vars, csp.all_diff_constraint_evaluator))
 
     block_indices = _get_block_indices(grid_len)
     for block in block_indices:
         block_vars = (name_to_var_map[(i, j)] for i, j in name_to_var_map.keys() if (i, j) in block)
-        constraints.add(csp.Constraint(block_vars, csp.all_different))
+        constraints.add(csp.Constraint(block_vars, csp.all_diff_constraint_evaluator))
 
     return csp.ConstraintProblem(constraints, name_to_var_map)
 

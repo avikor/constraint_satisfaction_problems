@@ -10,23 +10,23 @@ class TestConsistency(unittest.TestCase):
         names = {"wa", "nt", "q", "nsw", "v", "sa", "t"}
         self.name_to_variable_map = csp.Variable.from_names_to_equal_domain(names, colors)
         const1 = csp.Constraint([self.name_to_variable_map["sa"], self.name_to_variable_map["wa"]],
-                                csp.all_different)
+                                csp.all_diff_constraint_evaluator)
         const2 = csp.Constraint([self.name_to_variable_map["sa"], self.name_to_variable_map["nt"]],
-                                csp.all_different)
+                                csp.all_diff_constraint_evaluator)
         const3 = csp.Constraint([self.name_to_variable_map["sa"], self.name_to_variable_map["q"]],
-                                csp.all_different)
+                                csp.all_diff_constraint_evaluator)
         const4 = csp.Constraint([self.name_to_variable_map["sa"], self.name_to_variable_map["nsw"]],
-                                csp.all_different)
+                                csp.all_diff_constraint_evaluator)
         const5 = csp.Constraint([self.name_to_variable_map["sa"], self.name_to_variable_map["v"]],
-                                csp.all_different)
+                                csp.all_diff_constraint_evaluator)
         const6 = csp.Constraint([self.name_to_variable_map["wa"], self.name_to_variable_map["nt"]],
-                                csp.all_different)
+                                csp.all_diff_constraint_evaluator)
         const7 = csp.Constraint([self.name_to_variable_map["nt"], self.name_to_variable_map["q"]],
-                                csp.all_different)
+                                csp.all_diff_constraint_evaluator)
         const8 = csp.Constraint([self.name_to_variable_map["q"], self.name_to_variable_map["nsw"]],
-                                csp.all_different)
+                                csp.all_diff_constraint_evaluator)
         const9 = csp.Constraint([self.name_to_variable_map["nsw"], self.name_to_variable_map["v"]],
-                                csp.all_different)
+                                csp.all_diff_constraint_evaluator)
         const10 = csp.Constraint([self.name_to_variable_map["t"]], csp.always_satisfied)
         constraints = [const1, const2, const3, const4, const5, const6, const7, const8, const9, const10]
         self.const_problem1 = csp.ConstraintProblem(constraints)

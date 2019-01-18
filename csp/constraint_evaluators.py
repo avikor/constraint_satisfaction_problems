@@ -8,7 +8,7 @@ def never_satisfied(values: tuple) -> bool:
     return False
 
 
-def all_equal(values: tuple) -> bool:
+def all_equal_constraint_evaluator(values: tuple) -> bool:
     if len(values) == 1:
         return True
     first_val = values[0]
@@ -18,7 +18,7 @@ def all_equal(values: tuple) -> bool:
     return True
 
 
-def all_different(values: tuple) -> bool:
+def all_diff_constraint_evaluator(values: tuple) -> bool:
     seen_values = set()
     for val in values:
         if val in seen_values:

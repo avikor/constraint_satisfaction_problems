@@ -20,7 +20,7 @@ magic_sum = n * int((order + 1) / 2)
 name_to_variable_map = {square: csp.Variable(range(1, order + 1)) for square in range(1, order + 1)}
 
 constraints = set()
-constraints.add(csp.Constraint(name_to_variable_map.values(), csp.all_different))
+constraints.add(csp.Constraint(name_to_variable_map.values(), csp.all_diff_constraint_evaluator))
 
 exact_magic_sum = csp.ExactLengthExactSum(n, magic_sum)
 

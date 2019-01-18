@@ -28,7 +28,7 @@ name_to_domain_map["c_1000"] = (0, 1)
 name_to_variable_map = csp.Variable.from_names_to_domains(name_to_domain_map)
 
 all_diff_const = csp.Constraint((name_to_variable_map[name] for name in name_to_variable_map if name not in
-                                 ["c_10", "c_100", "c_1000"]), csp.all_different)
+                                 ["c_10", "c_100", "c_1000"]), csp.all_diff_constraint_evaluator)
 
 
 def units_digit(values: tuple) -> bool:
